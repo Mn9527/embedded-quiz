@@ -133,7 +133,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 <body>
 <div class="container">
   <div class="header" id="header" onclick="if(this.classList.contains('collapsed'))toggleHeader()">
-    <h1>嵌入式系统选择题练习<span class="header-toggle" onclick="toggleHeader()" title="折叠面板">−</span></h1>
+    <h1>嵌入式系统选择题练习<span class="header-toggle" onclick="toggleHeader();event.stopPropagation()" title="折叠面板">−</span></h1>
     <div class="mode-tabs">
       <button class="mode-tab active" id="tab-all" onclick="switchMode('all')">全部题库</button>
       <button class="mode-tab" id="tab-exam" onclick="switchMode('exam')">模拟考试（20题）</button>
