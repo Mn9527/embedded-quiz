@@ -154,11 +154,29 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 <script src="questions.js"></script>
 <script>
 const container = document.getElementById('questionsContainer');
+const STORAGE_KEY = 'embedded-quiz-state';
 let currentQuestions = QUESTIONS;
 let mode = 'all';
-const bookmarks = new Set();
-// Track user's answer for each question (by index in currentQuestions): null or 'A'-'D'
+let bookmarks = new Set();
+// answers keyed by question ID: { [qid]: 'A'-'D' }
 let answers = {};
+
+function saveState() {
+  const state = { answers, bookmarks: [...bookmarks], mode };
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return false;
+    const state = JSON.parse(raw);
+    answers = state.answers || {};
+    bookmarks = new Set(state.bookmarks || []);
+    mode = state.mode || 'all';
+    return true;
+  } catch(e) { return false; }
+}
 
 function shuffle(arr) {
   const a = arr.slice();
@@ -193,9 +211,10 @@ function switchMode(newMode) {
     currentQuestions = QUESTIONS;
   }
 
-  answers = {};
   renderQuestions();
+  updateBookmarkCount();
   updateScore();
+  saveState();
 }
 
 function reshuffleExam() {
@@ -203,6 +222,7 @@ function reshuffleExam() {
   answers = {};
   renderQuestions();
   updateScore();
+  saveState();
 }
 
 function toggleBookmark(idx, event) {
@@ -214,6 +234,7 @@ function toggleBookmark(idx, event) {
     bookmarks.add(q.id);
   }
   updateBookmarkCount();
+  saveState();
 
   const btn = document.getElementById(`bm-${idx}`);
   if (btn) {
@@ -223,7 +244,6 @@ function toggleBookmark(idx, event) {
 
   if (mode === 'bookmark' && !bookmarks.has(q.id)) {
     currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
-    answers = {};
     renderQuestions();
     updateScore();
   }
@@ -261,12 +281,14 @@ function renderQuestions() {
   }
 
   document.getElementById('totalCount').textContent = currentQuestions.length;
-  // Restore previous answers
-  Object.keys(answers).forEach(idx => {
-    const letter = answers[idx];
-    const radio = document.querySelector(`input[name="q-${idx}"][value="${letter}"]`);
-    if (radio) radio.checked = true;
-    highlightAnswer(parseInt(idx), letter);
+  // Restore previous answers (answers keyed by q.id)
+  currentQuestions.forEach((q, idx) => {
+    const userAns = answers[q.id];
+    if (userAns) {
+      const radio = document.querySelector(`input[name="q-${idx}"][value="${userAns}"]`);
+      if (radio) radio.checked = true;
+      highlightAnswer(idx, userAns);
+    }
   });
   updateAnsweredCount();
 }
@@ -312,8 +334,9 @@ function selectOption(idx, letter) {
   const radios = document.getElementsByName(`q-${idx}`);
   radios.forEach(r => { if (r.value === letter) r.checked = true; });
 
-  // Save answer
-  answers[idx] = letter;
+  // Save answer keyed by question ID
+  answers[q.id] = letter;
+  saveState();
 
   // Immediate feedback
   highlightAnswer(idx, letter);
@@ -325,16 +348,19 @@ function selectOption(idx, letter) {
 }
 
 function updateAnsweredCount() {
-  const count = Object.keys(answers).length;
+  let count = 0;
+  currentQuestions.forEach(q => { if (answers[q.id]) count++; });
   document.getElementById('answeredCount').textContent = count;
 }
 
 function updateScore() {
   let correct = 0, wrong = 0;
-  Object.keys(answers).forEach(idx => {
-    const q = currentQuestions[idx];
-    if (q && answers[idx] === q.answer) correct++;
-    else if (q) wrong++;
+  currentQuestions.forEach(q => {
+    const userAns = answers[q.id];
+    if (userAns) {
+      if (userAns === q.answer) correct++;
+      else wrong++;
+    }
   });
 
   const answered = correct + wrong;
@@ -407,10 +433,30 @@ function resetQuiz() {
   });
   updateScore();
   updateAnsweredCount();
+  saveState();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Restore saved state or start fresh
+if (loadState()) {
+  // Restore bookmarks Set
+  updateBookmarkCount();
+  // Restore current questions based on saved mode
+  if (mode === 'exam') {
+    currentQuestions = shuffle(QUESTIONS).slice(0, 20);
+  } else if (mode === 'bookmark') {
+    currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+  } else {
+    currentQuestions = QUESTIONS;
+  }
+  // Set active tab
+  document.getElementById('tab-all').classList.toggle('active', mode === 'all');
+  document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
+  document.getElementById('tab-bookmark').classList.toggle('active', mode === 'bookmark');
+  document.getElementById('btnReshuffle').style.display = mode === 'exam' ? '' : 'none';
+}
 renderQuestions();
+updateScore();
 </script>
 </body>
 </html>
