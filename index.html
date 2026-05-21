@@ -17,6 +17,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 .header.collapsed { padding: 14px 20px; cursor: pointer; }
 .header.collapsed > * { display: none !important; }
 .header.collapsed::after { content: '☰ 展开面板'; font-size: 15px; color: #4361ee; font-weight: 600; }
+
 .mode-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .mode-tab { padding: 8px 20px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 600; background: #fff; color: #666; transition: all .15s; }
 .mode-tab:hover { border-color: #4361ee; color: #4361ee; }
@@ -26,19 +27,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 .header .info span { margin-right: 20px; }
 
 .btn { display: inline-block; padding: 10px 28px; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; font-weight: 600; transition: all .2s; }
-.btn-submit { background: #4361ee; color: #fff; }
-.btn-submit:hover { background: #3a56d4; }
 .btn-reset { background: #e9ecef; color: #495057; margin-left: 10px; }
 .btn-reset:hover { background: #dee2e6; }
 .btn-reshuffle { background: #e9ecef; color: #495057; margin-left: 10px; }
 .btn-reshuffle:hover { background: #dee2e6; }
 
-.score-bar { display: none; padding: 16px; border-radius: 10px; margin-bottom: 16px; font-size: 15px; }
-.score-bar.show { display: block; }
-.score-bar .score-text { font-weight: 700; font-size: 20px; }
-.score-bar.good { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
-.score-bar.ok { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
-.score-bar.bad { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+.score-bar { padding: 16px; border-radius: 10px; margin-bottom: 16px; font-size: 15px; background: #e9ecef; }
+.score-bar .score-text { font-weight: 700; font-size: 20px; color: #333; }
+.score-bar .score-detail { color: #666; margin-top: 4px; }
 
 .question { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid transparent; transition: border-color .3s; content-visibility: auto; contain-intrinsic-size: auto 140px; }
 .question.correct { border-left-color: #28a745; }
@@ -49,7 +45,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 .question .q-result.show { display: inline; }
 .question .q-result.correct-tag { background: #d4edda; color: #155724; }
 .question .q-result.wrong-tag { background: #f8d7da; color: #721c24; }
-.question .q-result.unanswered-tag { background: #e2e3e5; color: #383d41; }
 .question .q-actions { display: inline-flex; gap: 4px; vertical-align: middle; }
 
 .options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -68,11 +63,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 .option.reveal-correct { border-color: #28a745; background: #d4edda; }
 .option.reveal-correct .letter { background: #28a745; color: #fff; }
 
-.btn-bookmark { display: inline-block; padding: 2px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; cursor: pointer; background: #fff; margin-left: 4px; transition: all .15s; user-select: none; line-height: 1; }
+.btn-bookmark { display: inline-block; padding: 2px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; cursor: pointer; background: #fff; transition: all .15s; user-select: none; line-height: 1; }
 .btn-bookmark:hover { border-color: #f0a500; }
 .btn-bookmark.marked { border-color: #f0a500; background: #fff8e1; }
 
-.btn-answer { display: inline-block; padding: 2px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; cursor: pointer; color: #666; background: #fff; margin-left: 4px; transition: all .15s; user-select: none; }
+.btn-answer { display: inline-block; padding: 2px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; cursor: pointer; color: #666; background: #fff; transition: all .15s; user-select: none; }
 .btn-answer:hover { border-color: #4361ee; color: #4361ee; }
 .btn-answer.active { border-color: #28a745; color: #28a745; background: #d4edda; }
 .answer-reveal { display: none; margin-top: 10px; padding: 8px 12px; background: #d4edda; border-radius: 6px; font-size: 13px; color: #155724; }
@@ -144,10 +139,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
       <span>已答 <strong id="answeredCount">0</strong> 题</span>
     </div>
     <div class="score-bar" id="scoreBar">
-      <div class="score-text" id="scoreText"></div>
-      <div id="scoreDetail"></div>
+      <div class="score-text" id="scoreText">尚未作答</div>
+      <div class="score-detail" id="scoreDetail"></div>
     </div>
-    <button class="btn btn-submit" onclick="submitQuiz()">提交查看结果</button>
     <button class="btn btn-reset" id="btnReset" onclick="resetQuiz()">重新作答</button>
     <button class="btn btn-reshuffle" id="btnReshuffle" style="display:none" onclick="reshuffleExam()">重新出题</button>
   </div>
@@ -162,8 +156,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
 const container = document.getElementById('questionsContainer');
 let currentQuestions = QUESTIONS;
 let mode = 'all';
-let submitted = false;
 const bookmarks = new Set();
+// Track user's answer for each question (by index in currentQuestions): null or 'A'-'D'
+let answers = {};
 
 function shuffle(arr) {
   const a = arr.slice();
@@ -183,7 +178,6 @@ function updateBookmarkCount() {
 }
 
 function switchMode(newMode) {
-  if (submitted) return;
   mode = newMode;
 
   document.getElementById('tab-all').classList.toggle('active', mode === 'all');
@@ -199,12 +193,16 @@ function switchMode(newMode) {
     currentQuestions = QUESTIONS;
   }
 
+  answers = {};
   renderQuestions();
+  updateScore();
 }
 
 function reshuffleExam() {
   currentQuestions = shuffle(QUESTIONS).slice(0, 20);
+  answers = {};
   renderQuestions();
+  updateScore();
 }
 
 function toggleBookmark(idx, event) {
@@ -217,17 +215,17 @@ function toggleBookmark(idx, event) {
   }
   updateBookmarkCount();
 
-  // Update the button appearance in current view
   const btn = document.getElementById(`bm-${idx}`);
   if (btn) {
     btn.textContent = bookmarks.has(q.id) ? '★' : '☆';
     btn.classList.toggle('marked', bookmarks.has(q.id));
   }
 
-  // If we're in bookmark mode and unmarking, remove the question
   if (mode === 'bookmark' && !bookmarks.has(q.id)) {
     currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+    answers = {};
     renderQuestions();
+    updateScore();
   }
 }
 
@@ -262,7 +260,94 @@ function renderQuestions() {
   }
 
   document.getElementById('totalCount').textContent = currentQuestions.length;
+  // Restore previous answers
+  Object.keys(answers).forEach(idx => {
+    const letter = answers[idx];
+    const radio = document.querySelector(`input[name="q-${idx}"][value="${letter}"]`);
+    if (radio) radio.checked = true;
+    highlightAnswer(parseInt(idx), letter);
+  });
   updateAnsweredCount();
+}
+
+function highlightAnswer(idx, letter) {
+  const q = currentQuestions[idx];
+  // Clear
+  ['A','B','C','D'].forEach(l => {
+    const opt = document.getElementById(`opt-${idx}-${l}`);
+    if (opt) {
+      opt.classList.remove('selected', 'correct-answer', 'wrong-answer');
+    }
+  });
+  const resultTag = document.getElementById(`result-${idx}`);
+  const questionDiv = document.getElementById(`q-${idx}`);
+  if (!resultTag || !questionDiv) return;
+
+  questionDiv.classList.remove('correct', 'wrong');
+
+  // Apply selected + correct/wrong
+  const selOpt = document.getElementById(`opt-${idx}-${letter}`);
+  if (selOpt) selOpt.classList.add('selected');
+
+  if (letter === q.answer) {
+    questionDiv.classList.add('correct');
+    resultTag.innerHTML = '✓ 正确';
+    resultTag.className = 'q-result show correct-tag';
+    if (selOpt) selOpt.classList.add('correct-answer');
+  } else {
+    questionDiv.classList.add('wrong');
+    resultTag.innerHTML = '✗ 错误';
+    resultTag.className = 'q-result show wrong-tag';
+    if (selOpt) selOpt.classList.add('wrong-answer');
+    const correctOpt = document.getElementById(`opt-${idx}-${q.answer}`);
+    if (correctOpt) correctOpt.classList.add('correct-answer');
+  }
+}
+
+function selectOption(idx, letter) {
+  const q = currentQuestions[idx];
+
+  // Update radio
+  const radios = document.getElementsByName(`q-${idx}`);
+  radios.forEach(r => { if (r.value === letter) r.checked = true; });
+
+  // Save answer
+  answers[idx] = letter;
+
+  // Immediate feedback
+  highlightAnswer(idx, letter);
+  updateAnsweredCount();
+  updateScore();
+}
+
+function updateAnsweredCount() {
+  const count = Object.keys(answers).length;
+  document.getElementById('answeredCount').textContent = count;
+}
+
+function updateScore() {
+  let correct = 0, wrong = 0;
+  Object.keys(answers).forEach(idx => {
+    const q = currentQuestions[idx];
+    if (q && answers[idx] === q.answer) correct++;
+    else if (q) wrong++;
+  });
+
+  const answered = correct + wrong;
+  if (answered === 0) {
+    document.getElementById('scoreText').textContent = '尚未作答';
+    document.getElementById('scoreDetail').textContent = '';
+    return;
+  }
+
+  const percent = Math.round(correct / answered * 100);
+  const bar = document.getElementById('scoreBar');
+  bar.style.background = percent >= 80 ? '#d4edda' : percent >= 60 ? '#fff3cd' : '#f8d7da';
+  bar.style.border = '1px solid ' + (percent >= 80 ? '#c3e6cb' : percent >= 60 ? '#ffeeba' : '#f5c6cb');
+  document.getElementById('scoreText').textContent =
+    `正确率：${percent}%（${correct} / ${answered}）`;
+  document.getElementById('scoreDetail').textContent =
+    `正确 ${correct} 题 | 错误 ${wrong} 题 | 未作答 ${currentQuestions.length - answered} 题`;
 }
 
 function toggleAnswer(idx) {
@@ -285,74 +370,8 @@ function toggleAnswer(idx) {
   }
 }
 
-function selectOption(idx, letter) {
-  if (submitted) return;
-
-  const radios = document.getElementsByName(`q-${idx}`);
-  radios.forEach(r => { if (r.value === letter) r.checked = true; });
-
-  ['A','B','C','D'].forEach(l => {
-    const opt = document.getElementById(`opt-${idx}-${l}`);
-    opt.classList.toggle('selected', l === letter);
-  });
-
-  updateAnsweredCount();
-}
-
-function updateAnsweredCount() {
-  let count = 0;
-  currentQuestions.forEach((_, idx) => {
-    const selected = document.querySelector(`input[name="q-${idx}"]:checked`);
-    if (selected) count++;
-  });
-  document.getElementById('answeredCount').textContent = count;
-}
-
-function submitQuiz() {
-  if (submitted) return;
-
-  let correct = 0, wrong = 0, unanswered = 0;
-
-  currentQuestions.forEach((q, idx) => {
-    const selected = document.querySelector(`input[name="q-${idx}"]:checked`);
-    const questionDiv = document.getElementById(`q-${idx}`);
-    const resultTag = document.getElementById(`result-${idx}`);
-
-    if (!selected) {
-      unanswered++;
-      resultTag.textContent = '未作答';
-      resultTag.className = 'q-result show unanswered-tag';
-    } else if (selected.value === q.answer) {
-      correct++;
-      questionDiv.classList.add('correct');
-      resultTag.innerHTML = '✓ 正确';
-      resultTag.className = 'q-result show correct-tag';
-      document.getElementById(`opt-${idx}-${selected.value}`).classList.add('correct-answer');
-    } else {
-      wrong++;
-      questionDiv.classList.add('wrong');
-      resultTag.innerHTML = '✗ 错误';
-      resultTag.className = 'q-result show wrong-tag';
-      document.getElementById(`opt-${idx}-${selected.value}`).classList.add('wrong-answer');
-      document.getElementById(`opt-${idx}-${q.answer}`).classList.add('correct-answer');
-    }
-  });
-
-  const answered = correct + wrong;
-  const percent = answered > 0 ? Math.round(correct / answered * 100) : 0;
-  const bar = document.getElementById('scoreBar');
-  bar.className = 'score-bar show ' + (percent >= 80 ? 'good' : percent >= 60 ? 'ok' : 'bad');
-  document.getElementById('scoreText').textContent =
-    `正确率：${percent}%（${correct} / ${answered}）`;
-  document.getElementById('scoreDetail').textContent =
-    `正确 ${correct} 题 | 错误 ${wrong} 题 | 未作答 ${unanswered} 题`;
-
-  submitted = true;
-  document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
-}
-
 function resetQuiz() {
-  submitted = false;
+  answers = {};
   document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
   document.querySelectorAll('.question').forEach(q => {
     q.classList.remove('correct', 'wrong');
@@ -370,7 +389,7 @@ function resetQuiz() {
     b.classList.remove('active');
     b.textContent = '查看答案';
   });
-  document.getElementById('scoreBar').className = 'score-bar';
+  updateScore();
   updateAnsweredCount();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
