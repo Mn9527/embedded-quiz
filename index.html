@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>嵌入式系统选择题练习</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+.header { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 20px; z-index: 100; }
+.header h1 { font-size: 22px; margin-bottom: 12px; color: #1a1a2e; }
+
+.mode-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.mode-tab { padding: 8px 20px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 14px; cursor: pointer; font-weight: 600; background: #fff; color: #666; transition: all .15s; }
+.mode-tab:hover { border-color: #4361ee; color: #4361ee; }
+.mode-tab.active { border-color: #4361ee; background: #eef1ff; color: #4361ee; }
+
+.header .info { color: #666; font-size: 14px; margin-bottom: 16px; }
+.header .info span { margin-right: 20px; }
+
+.btn { display: inline-block; padding: 10px 28px; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; font-weight: 600; transition: all .2s; }
+.btn-submit { background: #4361ee; color: #fff; }
+.btn-submit:hover { background: #3a56d4; }
+.btn-reset { background: #e9ecef; color: #495057; margin-left: 10px; }
+.btn-reset:hover { background: #dee2e6; }
+.btn-reshuffle { background: #e9ecef; color: #495057; margin-left: 10px; }
+.btn-reshuffle:hover { background: #dee2e6; }
+
+.score-bar { display: none; padding: 16px; border-radius: 10px; margin-bottom: 16px; font-size: 15px; }
+.score-bar.show { display: block; }
+.score-bar .score-text { font-weight: 700; font-size: 20px; }
+.score-bar.good { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+.score-bar.ok { background: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
+.score-bar.bad { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+
+.question { background: #fff; border-radius: 10px; padding: 20px 24px; margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 4px solid transparent; transition: border-color .3s; content-visibility: auto; contain-intrinsic-size: auto 140px; }
+.question.correct { border-left-color: #28a745; }
+.question.wrong { border-left-color: #dc3545; }
+.question .q-title { font-weight: 700; font-size: 15px; margin-bottom: 12px; color: #1a1a2e; }
+.question .q-num { color: #4361ee; margin-right: 6px; }
+.question .q-result { display: none; font-size: 12px; margin-left: 8px; padding: 2px 8px; border-radius: 4px; }
+.question .q-result.show { display: inline; }
+.question .q-result.correct-tag { background: #d4edda; color: #155724; }
+.question .q-result.wrong-tag { background: #f8d7da; color: #721c24; }
+.question .q-result.unanswered-tag { background: #e2e3e5; color: #383d41; }
+
+.options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@media (max-width: 600px) { .options { grid-template-columns: 1fr; } }
+.option { display: flex; align-items: center; padding: 10px 14px; border: 2px solid #e9ecef; border-radius: 8px; cursor: pointer; transition: all .15s; }
+.option:hover { border-color: #adb5bd; background: #f8f9fa; }
+.option input[type=radio] { display: none; }
+.option .letter { width: 28px; height: 28px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin-right: 10px; flex-shrink: 0; transition: all .15s; }
+.option.selected { border-color: #4361ee; background: #eef1ff; }
+.option.selected .letter { background: #4361ee; color: #fff; }
+.option.correct-answer { border-color: #28a745; background: #d4edda; }
+.option.correct-answer .letter { background: #28a745; color: #fff; }
+.option.wrong-answer { border-color: #dc3545; background: #f8d7da; }
+.option.wrong-answer .letter { background: #dc3545; color: #fff; }
+.option .text { flex: 1; font-size: 14px; }
+.option.reveal-correct { border-color: #28a745; background: #d4edda; }
+.option.reveal-correct .letter { background: #28a745; color: #fff; }
+
+.btn-bookmark { display: inline-block; padding: 2px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; cursor: pointer; background: #fff; margin-left: 4px; transition: all .15s; user-select: none; line-height: 1; }
+.btn-bookmark:hover { border-color: #f0a500; }
+.btn-bookmark.marked { border-color: #f0a500; background: #fff8e1; }
+
+.btn-answer { display: inline-block; padding: 2px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 12px; cursor: pointer; color: #666; background: #fff; margin-left: 4px; transition: all .15s; user-select: none; }
+.btn-answer:hover { border-color: #4361ee; color: #4361ee; }
+.btn-answer.active { border-color: #28a745; color: #28a745; background: #d4edda; }
+.answer-reveal { display: none; margin-top: 10px; padding: 8px 12px; background: #d4edda; border-radius: 6px; font-size: 13px; color: #155724; }
+.answer-reveal.show { display: block; }
+
+.empty-hint { text-align: center; padding: 60px 20px; color: #999; font-size: 15px; }
+
+.footer { text-align: center; padding: 24px; color: #999; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header" id="header">
+    <h1>嵌入式系统选择题练习</h1>
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tab-all" onclick="switchMode('all')">全部题库</button>
+      <button class="mode-tab" id="tab-exam" onclick="switchMode('exam')">模拟考试（20题）</button>
+      <button class="mode-tab" id="tab-bookmark" onclick="switchMode('bookmark')">标记题目（<span id="bookmarkCount">0</span>）</button>
+    </div>
+    <div class="info">
+      <span>共 <strong id="totalCount">0</strong> 题</span>
+      <span>已答 <strong id="answeredCount">0</strong> 题</span>
+    </div>
+    <div class="score-bar" id="scoreBar">
+      <div class="score-text" id="scoreText"></div>
+      <div id="scoreDetail"></div>
+    </div>
+    <button class="btn btn-submit" onclick="submitQuiz()">提交查看结果</button>
+    <button class="btn btn-reset" id="btnReset" onclick="resetQuiz()">重新作答</button>
+    <button class="btn btn-reshuffle" id="btnReshuffle" style="display:none" onclick="reshuffleExam()">重新出题</button>
+  </div>
+
+  <div id="questionsContainer"></div>
+
+  <div class="footer">嵌入式系统选择题在线练习</div>
+</div>
+
+<script src="questions.js"></script>
+<script>
+const container = document.getElementById('questionsContainer');
+let currentQuestions = QUESTIONS;
+let mode = 'all';
+let submitted = false;
+const bookmarks = new Set();
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function updateBookmarkCount() {
+  document.getElementById('bookmarkCount').textContent = bookmarks.size;
+}
+
+function switchMode(newMode) {
+  if (submitted) return;
+  mode = newMode;
+
+  document.getElementById('tab-all').classList.toggle('active', mode === 'all');
+  document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
+  document.getElementById('tab-bookmark').classList.toggle('active', mode === 'bookmark');
+  document.getElementById('btnReshuffle').style.display = mode === 'exam' ? '' : 'none';
+
+  if (mode === 'exam') {
+    currentQuestions = shuffle(QUESTIONS).slice(0, 20);
+  } else if (mode === 'bookmark') {
+    currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+  } else {
+    currentQuestions = QUESTIONS;
+  }
+
+  renderQuestions();
+}
+
+function reshuffleExam() {
+  currentQuestions = shuffle(QUESTIONS).slice(0, 20);
+  renderQuestions();
+}
+
+function toggleBookmark(idx, event) {
+  event.stopPropagation();
+  const q = currentQuestions[idx];
+  if (bookmarks.has(q.id)) {
+    bookmarks.delete(q.id);
+  } else {
+    bookmarks.add(q.id);
+  }
+  updateBookmarkCount();
+
+  // Update the button appearance in current view
+  const btn = document.getElementById(`bm-${idx}`);
+  if (btn) {
+    btn.textContent = bookmarks.has(q.id) ? '★' : '☆';
+    btn.classList.toggle('marked', bookmarks.has(q.id));
+  }
+
+  // If we're in bookmark mode and unmarking, remove the question
+  if (mode === 'bookmark' && !bookmarks.has(q.id)) {
+    currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+    renderQuestions();
+  }
+}
+
+function renderQuestions() {
+  if (currentQuestions.length === 0) {
+    container.innerHTML = '<div class="empty-hint">暂无题目</div>';
+  } else {
+    container.innerHTML = currentQuestions.map((q, idx) => `
+      <div class="question" id="q-${idx}">
+        <div class="q-title">
+          <span class="q-num">#${idx + 1}</span>${q.question}
+          <span class="q-result" id="result-${idx}"></span>
+          <span class="btn-bookmark${bookmarks.has(q.id) ? ' marked' : ''}" id="bm-${idx}" onclick="toggleBookmark(${idx}, event)">${bookmarks.has(q.id) ? '★' : '☆'}</span>
+          <span class="btn-answer" id="btn-ans-${idx}" onclick="toggleAnswer(${idx})">查看答案</span>
+        </div>
+        <div class="options">
+          ${['A','B','C','D'].map(letter => `
+            <label class="option" id="opt-${idx}-${letter}" onclick="selectOption(${idx}, '${letter}')">
+              <input type="radio" name="q-${idx}" value="${letter}">
+              <span class="letter">${letter}</span>
+              <span class="text">${q.options[letter]}</span>
+            </label>
+          `).join('')}
+        </div>
+        <div class="answer-reveal" id="reveal-${idx}">
+          正确答案：<strong>${q.answer}</strong> — ${q.options[q.answer]}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('totalCount').textContent = currentQuestions.length;
+  updateAnsweredCount();
+}
+
+function toggleAnswer(idx) {
+  const q = currentQuestions[idx];
+  const reveal = document.getElementById(`reveal-${idx}`);
+  const btn = document.getElementById(`btn-ans-${idx}`);
+  const opt = document.getElementById(`opt-${idx}-${q.answer}`);
+  const isShowing = reveal.classList.contains('show');
+
+  if (isShowing) {
+    reveal.classList.remove('show');
+    btn.classList.remove('active');
+    btn.textContent = '查看答案';
+    opt.classList.remove('reveal-correct');
+  } else {
+    reveal.classList.add('show');
+    btn.classList.add('active');
+    btn.textContent = '隐藏答案';
+    opt.classList.add('reveal-correct');
+  }
+}
+
+function selectOption(idx, letter) {
+  if (submitted) return;
+
+  const radios = document.getElementsByName(`q-${idx}`);
+  radios.forEach(r => { if (r.value === letter) r.checked = true; });
+
+  ['A','B','C','D'].forEach(l => {
+    const opt = document.getElementById(`opt-${idx}-${l}`);
+    opt.classList.toggle('selected', l === letter);
+  });
+
+  updateAnsweredCount();
+}
+
+function updateAnsweredCount() {
+  let count = 0;
+  currentQuestions.forEach((_, idx) => {
+    const selected = document.querySelector(`input[name="q-${idx}"]:checked`);
+    if (selected) count++;
+  });
+  document.getElementById('answeredCount').textContent = count;
+}
+
+function submitQuiz() {
+  if (submitted) return;
+
+  let correct = 0, wrong = 0, unanswered = 0;
+
+  currentQuestions.forEach((q, idx) => {
+    const selected = document.querySelector(`input[name="q-${idx}"]:checked`);
+    const questionDiv = document.getElementById(`q-${idx}`);
+    const resultTag = document.getElementById(`result-${idx}`);
+
+    if (!selected) {
+      unanswered++;
+      resultTag.textContent = '未作答';
+      resultTag.className = 'q-result show unanswered-tag';
+    } else if (selected.value === q.answer) {
+      correct++;
+      questionDiv.classList.add('correct');
+      resultTag.innerHTML = '✓ 正确';
+      resultTag.className = 'q-result show correct-tag';
+      document.getElementById(`opt-${idx}-${selected.value}`).classList.add('correct-answer');
+    } else {
+      wrong++;
+      questionDiv.classList.add('wrong');
+      resultTag.innerHTML = '✗ 错误';
+      resultTag.className = 'q-result show wrong-tag';
+      document.getElementById(`opt-${idx}-${selected.value}`).classList.add('wrong-answer');
+      document.getElementById(`opt-${idx}-${q.answer}`).classList.add('correct-answer');
+    }
+  });
+
+  const answered = correct + wrong;
+  const percent = answered > 0 ? Math.round(correct / answered * 100) : 0;
+  const bar = document.getElementById('scoreBar');
+  bar.className = 'score-bar show ' + (percent >= 80 ? 'good' : percent >= 60 ? 'ok' : 'bad');
+  document.getElementById('scoreText').textContent =
+    `正确率：${percent}%（${correct} / ${answered}）`;
+  document.getElementById('scoreDetail').textContent =
+    `正确 ${correct} 题 | 错误 ${wrong} 题 | 未作答 ${unanswered} 题`;
+
+  submitted = true;
+  document.getElementById('header').scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetQuiz() {
+  submitted = false;
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('.question').forEach(q => {
+    q.classList.remove('correct', 'wrong');
+  });
+  document.querySelectorAll('.option').forEach(o => {
+    o.classList.remove('selected', 'correct-answer', 'wrong-answer', 'reveal-correct');
+  });
+  document.querySelectorAll('.q-result').forEach(r => {
+    r.className = 'q-result';
+  });
+  document.querySelectorAll('.answer-reveal').forEach(r => {
+    r.classList.remove('show');
+  });
+  document.querySelectorAll('.btn-answer').forEach(b => {
+    b.classList.remove('active');
+    b.textContent = '查看答案';
+  });
+  document.getElementById('scoreBar').className = 'score-bar';
+  updateAnsweredCount();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+renderQuestions();
+</script>
+</body>
+</html>
