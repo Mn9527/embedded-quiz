@@ -253,7 +253,8 @@ function renderQuestions() {
           `).join('')}
         </div>
         <div class="answer-reveal" id="reveal-${idx}">
-          正确答案：<strong>${q.answer}</strong> — ${q.options[q.answer]}
+          正确答案：<strong>${q.answer}</strong> — ${q.options[q.answer]}<br>
+          <span style="color:#666;font-size:12px;">${q.explanation || ''}</span>
         </div>
       </div>
     `).join('');
