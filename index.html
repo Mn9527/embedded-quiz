@@ -319,6 +319,9 @@ function selectOption(idx, letter) {
   highlightAnswer(idx, letter);
   updateAnsweredCount();
   updateScore();
+
+  // Auto-reveal answer and explanation
+  showAnswer(idx);
 }
 
 function updateAnsweredCount() {
@@ -349,6 +352,18 @@ function updateScore() {
     `正确率：${percent}%（${correct} / ${answered}）`;
   document.getElementById('scoreDetail').textContent =
     `正确 ${correct} 题 | 错误 ${wrong} 题 | 未作答 ${currentQuestions.length - answered} 题`;
+}
+
+function showAnswer(idx) {
+  const q = currentQuestions[idx];
+  const reveal = document.getElementById(`reveal-${idx}`);
+  const btn = document.getElementById(`btn-ans-${idx}`);
+  const opt = document.getElementById(`opt-${idx}-${q.answer}`);
+  if (!reveal || reveal.classList.contains('show')) return;
+  reveal.classList.add('show');
+  btn.classList.add('active');
+  btn.textContent = '隐藏答案';
+  opt.classList.add('reveal-correct');
 }
 
 function toggleAnswer(idx) {
