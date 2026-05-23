@@ -131,8 +131,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft Ya
     <h1>嵌入式系统选择题练习<span class="header-toggle" onclick="toggleHeader();event.stopPropagation()" title="折叠面板">−</span></h1>
     <div class="mode-tabs">
       <button class="mode-tab active" id="tab-all" onclick="switchMode('all')">全部题库</button>
-      <button class="mode-tab" id="tab-exam" onclick="switchMode('exam')">模拟考试（20题）</button>
-      <button class="mode-tab" id="tab-bookmark" onclick="switchMode('bookmark')">标记题目（<span id="bookmarkCount">0</span>）</button>
+      <button class="mode-tab" id="tab-brushed" onclick="switchMode('brushed')">已刷题库</button>
+      <button class="mode-tab" id="tab-unbrushed" onclick="switchMode('unbrushed')">未刷题库</button>
+      <button class="mode-tab" id="tab-exam" onclick="switchMode('exam')">模拟考试</button>
+      <button class="mode-tab" id="tab-bookmark" onclick="switchMode('bookmark')">标记（<span id="bookmarkCount">0</span>）</button>
     </div>
     <div class="info">
       <span>共 <strong id="totalCount">0</strong> 题</span>
@@ -158,11 +160,17 @@ const STORAGE_KEY = 'embedded-quiz-state';
 let currentQuestions = QUESTIONS;
 let mode = 'all';
 let bookmarks = new Set();
-// answers keyed by question ID: { [qid]: 'A'-'D' }
+// Normal answers (all/bookmark/brushed/unbrushed), keyed by question ID
 let answers = {};
+// Exam answers — completely separate from normal answers
+let examAnswers = {};
+
+function getAnswerStore() {
+  return mode === 'exam' ? examAnswers : answers;
+}
 
 function saveState() {
-  const state = { answers, bookmarks: [...bookmarks], mode };
+  const state = { answers, examAnswers, bookmarks: [...bookmarks], mode };
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
 }
 
@@ -172,6 +180,7 @@ function loadState() {
     if (!raw) return false;
     const state = JSON.parse(raw);
     answers = state.answers || {};
+    examAnswers = state.examAnswers || {};
     bookmarks = new Set(state.bookmarks || []);
     mode = state.mode || 'all';
     return true;
@@ -198,15 +207,20 @@ function updateBookmarkCount() {
 function switchMode(newMode) {
   mode = newMode;
 
-  document.getElementById('tab-all').classList.toggle('active', mode === 'all');
-  document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
-  document.getElementById('tab-bookmark').classList.toggle('active', mode === 'bookmark');
+  ['all','exam','bookmark','brushed','unbrushed'].forEach(m => {
+    const tab = document.getElementById('tab-' + m);
+    if (tab) tab.classList.toggle('active', mode === m);
+  });
   document.getElementById('btnReshuffle').style.display = mode === 'exam' ? '' : 'none';
 
   if (mode === 'exam') {
     currentQuestions = shuffle(QUESTIONS).slice(0, 20);
   } else if (mode === 'bookmark') {
     currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+  } else if (mode === 'brushed') {
+    currentQuestions = QUESTIONS.filter(q => answers[q.id]);
+  } else if (mode === 'unbrushed') {
+    currentQuestions = QUESTIONS.filter(q => !answers[q.id]);
   } else {
     currentQuestions = QUESTIONS;
   }
@@ -218,8 +232,8 @@ function switchMode(newMode) {
 }
 
 function reshuffleExam() {
+  examAnswers = {};
   currentQuestions = shuffle(QUESTIONS).slice(0, 20);
-  answers = {};
   renderQuestions();
   updateScore();
   saveState();
@@ -281,9 +295,10 @@ function renderQuestions() {
   }
 
   document.getElementById('totalCount').textContent = currentQuestions.length;
-  // Restore previous answers (answers keyed by q.id)
+  // Restore previous answers from the correct store
+  const store = getAnswerStore();
   currentQuestions.forEach((q, idx) => {
-    const userAns = answers[q.id];
+    const userAns = store[q.id];
     if (userAns) {
       const radio = document.querySelector(`input[name="q-${idx}"][value="${userAns}"]`);
       if (radio) radio.checked = true;
@@ -295,12 +310,9 @@ function renderQuestions() {
 
 function highlightAnswer(idx, letter) {
   const q = currentQuestions[idx];
-  // Clear
   ['A','B','C','D'].forEach(l => {
     const opt = document.getElementById(`opt-${idx}-${l}`);
-    if (opt) {
-      opt.classList.remove('selected', 'correct-answer', 'wrong-answer');
-    }
+    if (opt) opt.classList.remove('selected', 'correct-answer', 'wrong-answer');
   });
   const resultTag = document.getElementById(`result-${idx}`);
   const questionDiv = document.getElementById(`q-${idx}`);
@@ -308,7 +320,6 @@ function highlightAnswer(idx, letter) {
 
   questionDiv.classList.remove('correct', 'wrong');
 
-  // Apply selected + correct/wrong
   const selOpt = document.getElementById(`opt-${idx}-${letter}`);
   if (selOpt) selOpt.classList.add('selected');
 
@@ -329,34 +340,31 @@ function highlightAnswer(idx, letter) {
 
 function selectOption(idx, letter) {
   const q = currentQuestions[idx];
-
-  // Update radio
   const radios = document.getElementsByName(`q-${idx}`);
   radios.forEach(r => { if (r.value === letter) r.checked = true; });
 
-  // Save answer keyed by question ID
-  answers[q.id] = letter;
+  // Write to the correct answer store
+  getAnswerStore()[q.id] = letter;
   saveState();
 
-  // Immediate feedback
   highlightAnswer(idx, letter);
   updateAnsweredCount();
   updateScore();
-
-  // Auto-reveal answer and explanation
   showAnswer(idx);
 }
 
 function updateAnsweredCount() {
+  const store = getAnswerStore();
   let count = 0;
-  currentQuestions.forEach(q => { if (answers[q.id]) count++; });
+  currentQuestions.forEach(q => { if (store[q.id]) count++; });
   document.getElementById('answeredCount').textContent = count;
 }
 
 function updateScore() {
+  const store = getAnswerStore();
   let correct = 0, wrong = 0;
   currentQuestions.forEach(q => {
-    const userAns = answers[q.id];
+    const userAns = store[q.id];
     if (userAns) {
       if (userAns === q.answer) correct++;
       else wrong++;
@@ -413,7 +421,11 @@ function toggleAnswer(idx) {
 }
 
 function resetQuiz() {
-  answers = {};
+  if (mode === 'exam') {
+    examAnswers = {};
+  } else {
+    answers = {};
+  }
   document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
   document.querySelectorAll('.question').forEach(q => {
     q.classList.remove('correct', 'wrong');
@@ -439,20 +451,22 @@ function resetQuiz() {
 
 // Restore saved state or start fresh
 if (loadState()) {
-  // Restore bookmarks Set
   updateBookmarkCount();
-  // Restore current questions based on saved mode
   if (mode === 'exam') {
     currentQuestions = shuffle(QUESTIONS).slice(0, 20);
   } else if (mode === 'bookmark') {
     currentQuestions = QUESTIONS.filter(q => bookmarks.has(q.id));
+  } else if (mode === 'brushed') {
+    currentQuestions = QUESTIONS.filter(q => answers[q.id]);
+  } else if (mode === 'unbrushed') {
+    currentQuestions = QUESTIONS.filter(q => !answers[q.id]);
   } else {
     currentQuestions = QUESTIONS;
   }
-  // Set active tab
-  document.getElementById('tab-all').classList.toggle('active', mode === 'all');
-  document.getElementById('tab-exam').classList.toggle('active', mode === 'exam');
-  document.getElementById('tab-bookmark').classList.toggle('active', mode === 'bookmark');
+  ['all','exam','bookmark','brushed','unbrushed'].forEach(m => {
+    const tab = document.getElementById('tab-' + m);
+    if (tab) tab.classList.toggle('active', mode === m);
+  });
   document.getElementById('btnReshuffle').style.display = mode === 'exam' ? '' : 'none';
 }
 renderQuestions();
