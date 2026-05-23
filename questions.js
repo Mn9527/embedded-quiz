@@ -1,4 +1,3 @@
-
 // 嵌入式系统选择题题库（已验证正确答案）
 const QUESTIONS = [
   {
@@ -12,7 +11,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "嵌入式系统从层次结构上包含硬件层、板级支持包(BSP)、实时操作系统和应用软件，四者缺一不可。"
+    "explanation": "选D。嵌入式系统从层次结构上看包含4层：硬件层→板级支持包(BSP)→实时操作系统(RTOS)→应用软件。A、B、C各只覆盖了其中一层，只有D\"以上都是\"完整覆盖了全部层次。"
   },
   {
     "id": 4,
@@ -25,7 +24,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式系统通常要求实时性，因此使用的操作系统一般都具有实时约束，不能说\"不具有\"。"
+    "explanation": "选B。嵌入式操作系统通常具有实时约束，B说\"不具有\"恰与事实相反。A、C、D均为嵌入式系统的真实特点：需专用工具开发、技术密集且分散、面向特定任务。"
   },
   {
     "id": 5,
@@ -38,7 +37,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "嵌入式系统性能不一定低、价格也不一定便宜，高端嵌入式系统性能和成本都可能很高，这不是嵌入式系统的特点。"
+    "explanation": "选D。\"性能较低、价格便宜\"不是嵌入式系统的普遍特点——高端嵌入式系统(如航空电子)性能和成本都可能极高。A、B、C均为嵌入式系统的真实特点。"
   },
   {
     "id": 6,
@@ -51,7 +50,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "嵌入式系统对内存有严格限制，通常安装的内存比PC少得多，资源受限是其重要特点。"
+    "explanation": "选D。嵌入式系统资源受限，通常内存比PC少得多，D说\"安装的内存比PC多\"与事实相反。A、B、C正确：嵌入式系统通常使用实时OS、受多种微处理器架构支持、安全关键系统故障后果更严重。"
   },
   {
     "id": 7,
@@ -64,7 +63,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "飞行控制系统对响应时间有严格约束，必须在规定时间内完成计算和控制，是典型的实时系统。"
+    "explanation": "选D。实时系统要求在截止时间前完成响应。飞行控制系统有严格的时间约束，错失截止时间可能造成灾难。A电子邮件、B电子书、C微信均无实时性要求，可容忍延迟。"
   },
   {
     "id": 8,
@@ -77,7 +76,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "Windows7是通用操作系统，不具备实时性；VxWorks、RTAI、RTLinux都是实时操作系统。"
+    "explanation": "选D。Windows7是通用桌面OS，非实时OS。A VxWorks、B RTAI、C RTLinux均为实时操作系统。实时OS要求确定性的任务响应时间。"
   },
   {
     "id": 9,
@@ -90,7 +89,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "硬件抽象层(HAL)位于硬件之上、操作系统之下，不是操作系统内核的组成部分，而是为上层提供统一硬件接口的软件层。"
+    "explanation": "选D。HAL(硬件抽象层)位于硬件之上、OS之下，不是OS内核的组成部分——它给OS提供统一的硬件接口，屏蔽硬件差异。A、B、C正确描述了HAL的特性和作用。"
   },
   {
     "id": 10,
@@ -103,7 +102,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "FPGA编程软件属于硬件设计工具，不属于嵌入式系统软件（系统软件、驱动、中间件等）。"
+    "explanation": "选C。FPGA编程软件属于EDA硬件设计工具，不属于嵌入式系统软件。A系统软件(如RTOS)、B驱动、D嵌入式中间件均为嵌入式系统软件组成部分。"
   },
   {
     "id": 11,
@@ -116,7 +115,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式微处理器侧重控制和低功耗，通常不需要满足大量数据运算要求，那是DSP或通用CPU的强项。"
+    "explanation": "选B。\"满足大量数据运算要求\"是DSP或高性能通用CPU的强项，不是嵌入式微处理器的特点。A、C、D均为嵌入式微处理器的真实特点：支持实时多任务、存储保护、可扩展结构。"
   },
   {
     "id": 12,
@@ -129,7 +128,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Intel80386是通用PC的CPU，不是嵌入式微控制器。嵌入式微控制器的典型代表是8051、AVR等。"
+    "explanation": "选A。Intel80386是PC的CPU，不是嵌入式微控制器。嵌入式微控制器典型代表是8051、AVR、PIC等。B、C、D正确描述了微控制器的特征：高度集成、体积小功耗低、是嵌入式工业主流。"
   },
   {
     "id": 13,
@@ -142,7 +141,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "STM32F103系列基于ARM Cortex-M3，是嵌入式微控制器(MCU)，不是DSP处理器。DSP代表是TI的TMS320系列。"
+    "explanation": "选D。STM32F103是ARM Cortex-M3内核的通用MCU，不是DSP处理器。DSP的代表是TI TMS320系列。A、B、C正确：DSP在指令和架构上做了信号处理优化，广泛用于滤波/FFT等场景。"
   },
   {
     "id": 14,
@@ -155,7 +154,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "MPU定位是通用控制和处理，用最低功耗实现大量特殊高性能计算是DSP的特点，不是MPU的特点。"
+    "explanation": "选C。\"最低功耗实现大量特殊高性能计算\"是DSP的核心特征，而非MPU的特点。MPU由通用CPU演变而来(A对)，只保留嵌入式相关功能(B对)，具有体积小重量轻优点(D对)。"
   },
   {
     "id": 15,
@@ -168,7 +167,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "意法半导体(STMicroelectronics)是意法合资的欧洲公司，其ARM芯片不属于国产CPU。"
+    "explanation": "选B。意法半导体(ST)是欧洲公司，其ARM芯片不属于国产CPU。A沁恒、C极海、D海思均为中国本土芯片厂商。"
   },
   {
     "id": 16,
@@ -181,7 +180,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "嵌入式软件受硬件资源限制通常规模不大，\"规模较大\"是通用PC软件的特点。"
+    "explanation": "选A。\"规模较大\"是通用PC软件的特点。嵌入式软件受硬件资源限制，通常规模不大。B固化存储、C开发难度大、D高实时性和可靠性都是嵌入式软件的特点。"
   },
   {
     "id": 17,
@@ -194,7 +193,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "嵌入式系统的标准定义：对功能、可靠性、成本、体积、功耗有严格要求的专用计算机系统。"
+    "explanation": "选A。嵌入式系统的标准定义强调：功能、可靠性、成本、体积、功耗的严格要求。B的\"性能\"虽重要但不是定义中的核心词组，\"功能\"才是标准表述。"
   },
   {
     "id": 18,
@@ -207,7 +206,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "个人计算机(PC)是通用计算机，不属于嵌入式系统产品。PDA、ATM、机顶盒都是专用嵌入式设备。"
+    "explanation": "选C。\"个人计算机\"属于通用计算机，不属于嵌入式系统——嵌入式系统是专用计算机系统。A PDA、B ATM取款机、D机顶盒都是典型的嵌入式系统产品。"
   },
   {
     "id": 19,
@@ -220,7 +219,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "嵌入式软件最终需要固化(烧录)到ROM/Flash中才能在目标机上运行，这是通用软件开发没有的环节。"
+    "explanation": "选C。嵌入式开发比通用软件开发多了\"代码固化\"环节——需将程序烧录/固化到ROM/Flash中，目标机才能运行。A编写、B调试、D测试是两者共有的环节。"
   },
   {
     "id": 20,
@@ -233,7 +232,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "寄存器组位于CPU内部，存取速度最快；Cache次之，然后内存，Flash最慢。"
+    "explanation": "选C。存取速度排名：CPU寄存器组(最快，0个时钟周期)>Cache>内存(RAM)>Flash(最慢)。寄存器在CPU内部，访问延迟最小。"
   },
   {
     "id": 22,
@@ -246,7 +245,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "小端模式下低字节存低地址。0x2168465，最低字节0x65存入2000H。"
+    "explanation": "选C。小端：低字节0x65存于最低地址2000H。0x2168465=0x02168465，从低到高字节为0x65,0x84,0x16,0x02。A 0x21不存在于该数中。B 0x68也不在。"
   },
   {
     "id": 25,
@@ -259,7 +258,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ARM Cortex-M3只支持Thumb状态和调试状态，不支持传统的ARM(32位)状态。"
+    "explanation": "选C。ARM Cortex-M3只有Thumb状态(执行Thumb-2指令)和调试状态。A缺少调试状态，B不是两个工作状态，D休眠状态是电源管理模式非处理器状态。"
   },
   {
     "id": 26,
@@ -272,7 +271,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "RISC特点是固定长度指令、单周期执行。指令长度不固定、执行需多周期是CISC的特点。"
+    "explanation": "选C。\"指令长度不固定，执行需要多个周期\"是CISC的特点，不属于RISC。A、B、D正确描述RISC：流水线每周期前进一步、更多通用寄存器、Load/Store架构独立数据传输。"
   },
   {
     "id": 28,
@@ -285,7 +284,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "SoC已得到极其广泛的应用，尤其在手机、物联网、汽车电子等嵌入式领域已成为主流方案。"
+    "explanation": "选D。SoC已得到极其广泛的应用——手机处理器(骁龙/苹果A系列)、IoT芯片、汽车电子都是SoC的典型应用。A、B、C正确描述了SoC的特点：软硬件集成、含数字模拟混合电路、单芯片实现多种功能。"
   },
   {
     "id": 29,
@@ -298,7 +297,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "RISC是精简指令集计算机(Reduced Instruction Set Computer)，不是复杂指令集。"
+    "explanation": "选D。A错误：RISC是精简指令集(Reduced)，非复杂(Complex)。B错误：哈佛结构是程序和数据总线分离。C错误：ARM Thumb指令为16位/32位混合，非全部32位。D正确：Cortex-M面向控制应用。"
   },
   {
     "id": 30,
@@ -311,7 +310,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "小端格式：低字节存低地址，高字节存高地址，这是ARM处理器默认的存储格式。"
+    "explanation": "选A。小端格式定义：低字节存低地址，高字节存高地址。ARM默认小端。B中的24位ARM不支持(ARM为32位)。C MPU是存储器保护单元(非管理单元)，D MMU是存储器管理单元(非保护单元)。"
   },
   {
     "id": 31,
@@ -324,7 +323,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ARM Cortex-R是实时应用型处理器(R=Real-time)，Cortex-A(A=Application)才是高端应用型处理器。"
+    "explanation": "选C。ARM Cortex-R是实时应用型处理器(Real-time)，高端应用型是Cortex-A(Application)。A正确：T=Thumb指令集。B正确：ARM11后改称Cortex。D正确：Cortex-M系列无MMU。"
   },
   {
     "id": 32,
@@ -337,7 +336,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "R14是链接寄存器(LR)，用于保存子程序调用时的返回地址。"
+    "explanation": "选B。R14是链接寄存器(LR)，存储子程序返回地址。A通用寄存器是R0-R12。C程序计数器是R15(PC)。D程序状态寄存器是xPSR。"
   },
   {
     "id": 33,
@@ -350,7 +349,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3内核采用ARMv7-M架构，不是ARMv8-M（ARMv8-M用于Cortex-M23/M33等）。"
+    "explanation": "选A。Cortex-M3采用ARMv7-M架构，非ARMv8-M(后者用于Cortex-M23/M33等更新核心)。B、C、D正确：Thumb-2子集、哈佛架构、三级流水线+分支预测。"
   },
   {
     "id": 34,
@@ -363,7 +362,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3只支持Thumb状态(Thumb-2指令集)，不支持传统的ARM(32位)状态。这是M系列与A系列的重要区别。"
+    "explanation": "选A。Cortex-M3只有Thumb状态和调试状态，不支持传统ARM(32位)状态——这是M系列与A/R系列的重要区别。B线程/处理模式是运行模式，C/D是M3支持的特性。"
   },
   {
     "id": 35,
@@ -376,7 +375,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "NVIC优先级分组将优先级分为抢占优先级和子优先级(响应优先级)，不是\"主优先级\"。"
+    "explanation": "选D。NVIC优先级分组分为\"抢占优先级\"和\"子优先级\"(也叫响应优先级)，不是\"主优先级\"。A、B、C正确：NVIC是M3的完整部件、实现所有中断机制、可高度配置。"
   },
   {
     "id": 36,
@@ -389,7 +388,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "小端模式：低字节存放在低地址，先存放低字节再存放高字节。"
+    "explanation": "选C。正确答案是\"程序计数器\"。 A\"通用寄存器\" 与正确选项不符。 B\"链接寄存器\" 与正确选项不符。 D\"程序状态寄存器\" 与正确选项不符。"
   },
   {
     "id": 37,
@@ -402,7 +401,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3采用哈佛架构，具有独立的指令总线和数据总线，可同时取指和访问数据。"
+    "explanation": "选A。正确答案是\"通用寄存器\"。 B\"链接寄存器\" 与正确选项不符。 C\"程序计数器\" 与正确选项不符。 D\"程序状态寄存器\" 与正确选项不符。"
   },
   {
     "id": 38,
@@ -415,7 +414,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ARM的Thumb指令集主要是16位指令，Thumb-2支持16位和32位混合指令。"
+    "explanation": "选C。正确答案是\"0x22000008\"。 A\"0x20000002\" 与正确选项不符。 B\"0x22000002\" 与正确选项不符。 D\"0x20000008\" 与正确选项不符。"
   },
   {
     "id": 39,
@@ -428,7 +427,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "Cortex-M3有2个堆栈指针：MSP(主堆栈指针)用于OS内核和异常处理，PSP(进程堆栈指针)用于用户任务。"
+    "explanation": "选C。SRAM区(0x20000000起)位带别名公式：Alias=0x22000000+(Addr-0x20000000)×32+bit×4。0x20000001第2位=0x22000000+1×32+2×4=0x22000000+32+8=0x22000028。A/B用0x12(十进制18)不对，D基址0x20000000不是别名区。"
   },
   {
     "id": 40,
@@ -441,7 +440,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "PendSV(可挂起系统服务)是Cortex-M专门为OS任务切换设计的异常，优先级通常设为最低。"
+    "explanation": "选B。嵌入式处理器将板卡上的外设功能集成到芯片内部(SoC化)。A错误：差异很大(功耗、集成度等)。C错误：SoC含处理器+外设，嵌入式处理器只是SoC的一部分。D错误：DSP是嵌入式处理器的一种。"
   },
   {
     "id": 41,
@@ -454,7 +453,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "JTAG边界扫描链只能在调试模式下工作，芯片正常运行时不能随意通过JTAG观察和控制芯片内部状态。"
+    "explanation": "选B。正确答案是\"寻址方式种类丰富，指令功能尽量增强\"。 A\"指令长度固定，指令种类少\" 与正确选项不符。 C\"设置大量通用寄存器，访问存储器指令简单\" 与正确选项不符。 D\"选取使用频率较高的一些简单指令\" 与正确选项不符。"
   },
   {
     "id": 42,
@@ -467,7 +466,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103VBT6有5组GPIO端口：GPIOA、GPIOB、GPIOC、GPIOD、GPIOE，共80个I/O引脚。"
+    "explanation": "选B。正确答案是\"嵌入式微控制器\"。 A\"嵌入式微处理器\" 与正确选项不符。 C\"DSP\" 与正确选项不符。 D\"以上都不合适\" 与正确选项不符。"
   },
   {
     "id": 43,
@@ -480,7 +479,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "STM32 IO口的8种模式中没有\"浮空输出\"，输入模式才有浮空输入。输出模式有推挽、开漏及其复用形式。"
+    "explanation": "选A。正确答案是\"小端模式\"。 B\"大端模式\" 与正确选项不符。 C\"低端模式\" 与正确选项不符。 D\"高端模式\" 与正确选项不符。"
   },
   {
     "id": 44,
@@ -493,7 +492,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "STM32部分GPIO端口具有外部中断能力（如PA0~PA15映射到EXTI0~15），但不是所有端口所有引脚都支持。"
+    "explanation": "选D。正确答案是\"传感器\"。 A\"在线仿真器\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"JTAG适配器\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"示波器\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 45,
@@ -506,7 +505,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "推挽输出模式下，引脚可以输出高电平和低电平，具有较强的驱动能力。"
+    "explanation": "选A。正确答案是\"在Windows平台上，用 KEIL集成开发工具，编译出针对 ARM CPU 的可执行代码。\"。 B\"在Windows平台上，用 VSCode集成开发工具，编译出\" 与正确选项不符。 C\"在LINUX平台上，用GCC工具，编译出的可执行代码。\" 与正确选项不符。 D\"在Windows平台上，用 GCC工具，编译出的可执行代码。\" 与正确选项不符。"
   },
   {
     "id": 46,
@@ -519,7 +518,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "开漏输出模式下输出高电平时引脚呈高阻态，必须外接上拉电阻才能输出确定的高电平。"
+    "explanation": "选B。开漏输出模式下只有NMOS，输出高电平时NMOS截止，引脚呈高阻态，需外接上拉电阻才能得到确定高电平。A有上拉也只能输出低和弱高。C不能直接输出高。D输出低电平不需要上拉。"
   },
   {
     "id": 47,
@@ -532,7 +531,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "复用推挽输出将GPIO引脚的控制权交给片上外设（如USART、SPI等），由外设决定输出电平。"
+    "explanation": "选D。IAR EWARM、Keil MDK、ARM ADS均为嵌入式交叉开发工具，都属于交叉开发软件。A、B、C各自不全面。"
   },
   {
     "id": 48,
@@ -545,7 +544,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "GPIO并非所有引脚都有外部中断能力，只有特定引脚映射到EXTI线上才支持。"
+    "explanation": "选D。边界扫描链不能在任何状态下控制芯片——仅限调试模式且芯片停止运行时。A、B、C正确描述了JTAG边界扫描的基本原理：移位寄存器单元位于芯片边界、可观察控制I/O信号。"
   },
   {
     "id": 49,
@@ -558,7 +557,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "输入模式下可选择上拉(内部接VDD)、下拉(内部接GND)或浮空(不接任何电阻)。"
+    "explanation": "选A。正确答案是\"Test Data Require (TDR)\"。 B\"Test Mode Selection Input (TMS\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"Test Reset Input (TRST)\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"Test Clock Input (TCK)\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 50,
@@ -571,7 +570,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "GPIO输出模式下最大翻转速度可配置为2MHz、10MHz或50MHz。"
+    "explanation": "选C。GPIO输出50MHz时MODE=11(二进制)。A 10MHz=01。B 2MHz=10。D 100MHz不支持(STM32F103最大50MHz)。"
   },
   {
     "id": 51,
@@ -584,7 +583,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "每组GPIO端口的寄存器包括CRL/CRH(配置)、IDR(输入数据)、ODR(输出数据)、BSRR(置位/复位)、BRR(复位)、LCKR(锁定)。没有IMR寄存器。"
+    "explanation": "选C。STM32 IO口8种模式为：推挽输出、开漏输出、复用推挽输出、复用开漏输出、模拟输入、浮空输入、上拉输入、下拉输入。没有\"开漏输入\"模式——输入模式只有浮空/上拉/下拉/模拟四种，开漏仅用于输出。A上拉输入和B下拉输入均为合法输入模式，D开漏输出为合法输出模式。"
   },
   {
     "id": 52,
@@ -597,7 +596,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "BSRR寄存器高16位对应复位(设为0)，低16位对应置位(设为1)，可原子操作避免读-改-写问题。"
+    "explanation": "选A。正确答案是\"上拉复用\"。 B\"开漏复用\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"推挽复用\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"开漏输出\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 53,
@@ -610,7 +609,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "BRR寄存器专门用于清除引脚，写1对应位则清除，写0无效。"
+    "explanation": "选A。正确答案是\"GPIO可以用于模拟Flash的接口，对Flash存储器进行读写操作\"。 B\"GPIO通常用于连接外部的SDRAM，进行高速传输\" 与正确选项不符。 C\"CPU可以通过编程，决定GPIO是输入、输出的通信功能，但不\" 与正确选项不符。 D\"GPIO可以由CPU编程决定方向，但不能查询其状态\" 与正确选项不符。"
   },
   {
     "id": 54,
@@ -623,7 +622,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "IDR是只读寄存器，反映引脚当前输入电平状态。"
+    "explanation": "选C。正确答案是\"所有端口都3.3V与5V兼容\"。 A\"STM32F103VBT6一共有5组输入/输出端口\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"每个GPIO端口可通过的最大电流是25mA\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"STM32F103VBT6每组IO口有16个IO端口\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 55,
@@ -636,7 +635,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ODR是可读写寄存器，存输出数据。在输出模式下修改ODR的值可以改变引脚输出电平。"
+    "explanation": "选C。ODR(Output Data Register)在输出模式下存储将被驱动到引脚的数据，可读写。A不能读不对(B可读)。B只读不对。D表示输入状态的是IDR。"
   },
   {
     "id": 56,
@@ -649,7 +648,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "GPIOx_LCKR用于锁定端口配置，一旦锁定后CRL/CRH寄存器不能再修改，直到复位。"
+    "explanation": "选D。正确答案是\"以上都是\"。 A\"GPIOx_CRL，GPIOx_CRH\" 与正确选项不符。 B\"GPIOx_IDR，GPIOx_ODR\" 与正确选项不符。 C\"GPIOx_BRR，GPIOx_BSRR\" 与正确选项不符。"
   },
   {
     "id": 57,
@@ -662,7 +661,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "模拟输入模式下，施密特触发器被禁用，引脚直接连接到ADC输入通道，实现了模拟信号采集。"
+    "explanation": "选D。GPIOx_IMR不是标准GPIO寄存器——IMR是中断屏蔽寄存器(Interrupt Mask Register)，属于NVIC而非GPIO。每组GPIO端口的标配寄存器为：CRL/CRH(32位配置)、IDR/ODR(32位数据)、BSRR(32位置位/复位)、BRR(16位复位)、LCKR(32位锁定)。A/B/C所述寄存器均为GPIO端口真实存在的寄存器。"
   },
   {
     "id": 58,
@@ -675,7 +674,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "共阴极八段数码管显示0：a~f段亮，dp段灭，即abcdef=1111110，编码为0x3F。"
+    "explanation": "选A。正确答案是\"GPIOC的输出设置为0x800\"。 B\"GPIOC的输出设置为0x1\" 与正确选项不符。 C\"GPIOC的输出设置为0x11\" 与正确选项不符。 D\"GPIOC的输出设置为0x10000000000\" 与正确选项不符。"
   },
   {
     "id": 59,
@@ -688,7 +687,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "共阳极八段数码管与共阴极的编码互为反码。共阳极显示0时，a~f=0000001(低电平亮)，即0xC0。"
+    "explanation": "选C。正确答案是\"设置GPIOC-&gt;CRH的第12-19位为0，其他位不变\"。 A\"设置GPIOC-&gt;CRH的第3-4位为0，其他位置1\" 与正确选项不符。 B\"设置GPIOC-&gt;CRH的第3-4位为0，其他位不变\" 与正确选项不符。 D\"设置GPIOC-&gt;CRH的第12-19位为0，其他位置\" 与正确选项不符。"
   },
   {
     "id": 60,
@@ -701,7 +700,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "数码管动态扫描利用人眼视觉暂留效应，快速轮流点亮各位数码管，可以实现多位数码管显示。"
+    "explanation": "选D。正确答案是\"设置GPIOC-&gt;CRH的第12-19位为0，其他位置1\"。 A\"设置GPIOC-&gt;CRH的第3-4位为0，其他位置1\" 与正确选项不符。 B\"设置GPIOC-&gt;CRH的第3-4位为0，其他位不变\" 与正确选项不符。 C\"设置GPIOC-&gt;CRH的第12-19位为0，其他位不\" 与正确选项不符。"
   },
   {
     "id": 61,
@@ -714,7 +713,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "8段数码管需要8个I/O口控制段选，4位需要4个位选，动态扫描共需12个I/O口。"
+    "explanation": "选B。8段数码管需要8个段选信号，4位数码管可选共用段选线(8+4=12个I/O)。A 32太高(每位数码管用8个独立I/O)。C 8仅够段选不够位选。D 4仅够位选不够段选。"
   },
   {
     "id": 62,
@@ -727,7 +726,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "中断向量表存放各中断服务函数的入口地址，Cortex-M3上电后从地址0x00000000读取初始SP和PC。"
+    "explanation": "选A。正确答案是\"设置GPIOC-&gt;CRH的第15-17位为1，其他位为0\"。 B\"设置GPIOC-&gt;CRH的第15-17位为1，其他位不\" 与正确选项不符。 C\"设置GPIOC-&gt;CRH的第15-17位为0，其他位为\" 与正确选项不符。 D\"设置GPIOC-&gt;CRH的第15-17位为0，其他位不\" 与正确选项不符。"
   },
   {
     "id": 63,
@@ -740,7 +739,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ISER(中断使能设置寄存器)写1使能对应中断，写0无效。要禁用中断需使用ICER寄存器。"
+    "explanation": "选A。ISER写1使能对应中断，写0无效(要禁能需用ICER寄存器)。B写0有效错误。C的说法与A相反。D的说法没有实际依据。"
   },
   {
     "id": 64,
@@ -753,7 +752,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "ICER(中断清除使能寄存器)写1禁用对应中断，写0无效。"
+    "explanation": "选B。ICER写1禁能对应中断，写0无效。与ISER(写1使能)配对使用。A使能是ISER的功能。C/D说法不准确。"
   },
   {
     "id": 65,
@@ -766,7 +765,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "NVIC_ISPR设置中断挂起，即使中断未被使能也能挂起。挂起的中断在使能后会立即被响应。"
+    "explanation": "选B。ISPR写1可将对应中断置为挂起状态，即使中断未使能也可挂起。A写0无效。C只能用于已使能中断不对。D的说法不准确。"
   },
   {
     "id": 66,
@@ -779,7 +778,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "IABR(中断活跃标志寄存器)是只读的，不能通过写1来激活中断。它反映当前正在处理的中断。"
+    "explanation": "选D。正确答案是\"0x06\"。 A\"0x01\" 与正确选项不符。 B\"0x10\" 与正确选项不符。 C\"0x05\" 与正确选项不符。"
   },
   {
     "id": 67,
@@ -792,7 +791,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "EXTI每条中断/事件线都有独立的边沿检测器，支持上升沿、下降沿和双边沿触发。"
+    "explanation": "选B。正确答案是\"延时10毫秒\"。 A\"延时1毫秒\" 与正确选项不符。 C\"延时1秒\" 与正确选项不符。 D\"延时10秒\" 与正确选项不符。"
   },
   {
     "id": 68,
@@ -805,7 +804,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "EXTI支持20条中断/事件线：EXTI0~15对应GPIO引脚，EXTI16连接PVD输出，EXTI17连接RTC闹钟，EXTI18连接USB唤醒，EXTI19连接以太网唤醒。"
+    "explanation": "选D。正确答案是\"STM32具有256级可编程的中断优先级\"。 A\"STM32有76个中断\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"STM32有16个内核中断\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"STM32有60个可屏蔽中断\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 69,
@@ -818,7 +817,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "NVIC的优先级可以分组，STM32使用4位优先级，可配置为0~4位抢占优先级和4~0位子优先级。"
+    "explanation": "选C。正确答案是\"抢占优先级可以实现中断嵌套\"。 A\"抢占优先级的级别比响应优先级高\" 与正确选项不符。 B\"抢占优先级的级别比响应优先级低\" 与正确选项不符。 D\"响应优先级可以实现中断嵌套\" 与正确选项不符。"
   },
   {
     "id": 70,
@@ -831,7 +830,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "中断优先级数值越小，优先级越高。STM32中优先级0是最高优先级。"
+    "explanation": "选A。正确答案是\"使能某个中断，必须设置相应的ISER位为1\"。 B\"使能某个中断，必须设置相应的ISER位为1，其他位为0\" 与正确选项不符。 C\"使能某个中断，必须设置相应的ISER位为0\" 与正确选项不符。 D\"使能某个中断，必须设置相应的ISER位为0，其他位为1\" 与正确选项不符。"
   },
   {
     "id": 71,
@@ -844,7 +843,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "中断延迟包括：硬件响应时间(12个时钟周期)+ISR入口代码时间。Cortex-M3中断延迟非常短。"
+    "explanation": "选B。ICER(中断清除使能寄存器)写1有效(禁能对应中断)，写0无效。与ISER相反。A写0有效(错误)。C/D不成立。"
   },
   {
     "id": 72,
@@ -857,7 +856,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "串口异步通信需要定义：起始位(1位)、数据位(5~9位)、校验位(无/奇/偶)、停止位(1/1.5/2位)和波特率，缺一不可。"
+    "explanation": "选B。正确答案是\"只要抢占式优先级不一样就有可能发生中断嵌套\"。 A\"只要响应优先级不一样就有可能发生中断嵌套\" 与正确选项不符。 C\"只有抢占式优先级和响应优先级都不一才有可能发生中断嵌套\" 与正确选项不符。 D\"以上说法都不对\" 与正确选项不符。"
   },
   {
     "id": 73,
@@ -870,7 +869,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "波特率不匹配是串口通信出现乱码最常见的原因，收发双方必须在相同的波特率设置下工作。"
+    "explanation": "选C。串口乱码最常见原因是波特率不匹配——收发双方必须在相同波特率下工作。A起始位不一致较少见。B校验位不匹配会产生校验错误但不一定是乱码。D停止位不匹配也不一定乱码。"
   },
   {
     "id": 74,
@@ -883,7 +882,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "RS-232使用负逻辑，-3V~-15V表示逻辑1，+3V~+15V表示逻辑0。与TTL电平不兼容。"
+    "explanation": "选A。正确答案是\"每个中断/事件线都对应有一个边沿检测器\"。 B\"管理了控制器的16个中断/事件线\" 与正确选项不符。 C\"只有GPIOA的16个管脚可以映射到EXTI上\" 与正确选项不符。 D\"只有GPIOA的16个管脚不可以映射到EXTI上\" 与正确选项不符。"
   },
   {
     "id": 77,
@@ -896,7 +895,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "SPI使用4根线：SCLK(时钟)、MOSI(主出从入)、MISO(主入从出)、CS(片选)，支持全双工通信。"
+    "explanation": "选A。正确答案是\"2\"。 B\"3\" 与正确选项不符。 C\"4\" 与正确选项不符。 D\"5\" 与正确选项不符。"
   },
   {
     "id": 79,
@@ -909,7 +908,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103的ADC是12位逐次逼近型，最高采样速率1Msps。"
+    "explanation": "选C。正确答案是\"全双工\"。 A\"单工\" 与正确选项不符。 B\"半双工\" 与正确选项不符。 D\"以上都不是\" 与正确选项不符。"
   },
   {
     "id": 80,
@@ -922,7 +921,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ADC分辨率指输出数字量的位数。12位ADC的输出范围是0~4095(2^12-1)。"
+    "explanation": "选A。正确答案是\"比特率是每秒钟传输二进制代码的位数\"。 B\"波特率是每秒钟传输二进制代码的位数\" 与正确选项不符。 C\"波特率和比特率总是相同的\" 与正确选项不符。 D\"比特率表示每秒钟调制信号变化的次数\" 与正确选项不符。"
   },
   {
     "id": 81,
@@ -935,7 +934,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "参考电压Vref决定ADC的输入电压范围和转换精度，Vref的稳定性直接决定ADC精度。"
+    "explanation": "选A。正确答案是\"波特率表示每秒钟调制信号变化的次数\"。 B\"波特率是每秒钟传输二进制代码的位数\" 与正确选项不符。 C\"波特率和比特率总是相同的\" 与正确选项不符。 D\"比特率表示每秒钟调制信号变化的次数\" 与正确选项不符。"
   },
   {
     "id": 82,
@@ -948,7 +947,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "ADC转换时间 = 采样时间 + 转换时间(12.5个ADC时钟周期)。STM32 ADC时钟最高14MHz。"
+    "explanation": "选D。正确答案是\"以上都需要\"。 A\"起始位、数据位（8位或者9位）\" 与正确选项不符。 B\"停止位（1，1.5，2位）\" 与正确选项不符。 C\"波特率\" 与正确选项不符。"
   },
   {
     "id": 83,
@@ -961,7 +960,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "DMA(Direct Memory Access)传输不需要CPU干预，由DMA控制器直接在存储器和外设之间传输数据。"
+    "explanation": "选C。DMA(Direct Memory Access)在存储器和外设间直接传输数据不需要CPU参与，解放CPU做其他处理。A需要CPU中断处理不对(DMA只用中断通知完成)。B不需要任何中断不对。D只用于内存间传输不对。"
   },
   {
     "id": 84,
@@ -974,7 +973,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103有2个DMA控制器(DMA1和DMA2)，共12个通道，可实现外设到存储器、存储器到外设等传输。"
+    "explanation": "选C。正确答案是\"比较\"。 A\"采样\" 与正确选项不符。 B\"保持\" 与正确选项不符。 D\"编码\" 与正确选项不符。"
   },
   {
     "id": 85,
@@ -987,7 +986,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "DMA的传输方向可以配置为：外设→存储器、存储器→外设、存储器→存储器。"
+    "explanation": "选D。DMA支持三种传输方向：外设→存储器(RX)、存储器→外设(TX)、存储器→存储器(M2M)。A、B、C各只含一种不完整。"
   },
   {
     "id": 86,
@@ -1000,7 +999,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "DMA循环模式会自动重装载传输数量，实现连续不断的数据传输，常用于ADC连续采样。"
+    "explanation": "选D。正确答案是\"以上都是\"。 A\"积分型\" 与正确选项不符。 B\"逐次比较型\" 与正确选项不符。 C\"Σ-Δ型\" 与正确选项不符。"
   },
   {
     "id": 87,
@@ -1013,7 +1012,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "定时器预分频器(PSC)将输入时钟分频后提供给计数器。如72MHz经7199分频得10kHz计数时钟。"
+    "explanation": "选B。正确答案是\"2\"。 A\"1\" 与正确选项不符。 C\"3\" 与正确选项不符。 D\"4\" 与正确选项不符。"
   },
   {
     "id": 88,
@@ -1026,7 +1025,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "自动重装载寄存器(ARR)决定定时器的计数周期。向上计数模式下，计数器从0计到ARR后溢出产生更新事件。"
+    "explanation": "选C。正确答案是\"Σ-Ω型\"。 A\"逐次比较型\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"电容阵列逐次比较型\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"压频变换型\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 89,
@@ -1039,7 +1038,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "PWM占空比由捕获/比较寄存器(CCR)决定。占空比 = CCR / (ARR+1) × 100%。"
+    "explanation": "选C。PWM占空比=CCR/(ARR+1)。若CCR=500，ARR=999，占空比=500/1000=50%。A错误(CCR/ARR忘记+1)。B不准确。D只在特定模式成立。"
   },
   {
     "id": 90,
@@ -1052,7 +1051,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "PWM频率 = 定时器时钟频率 / ((PSC+1) × (ARR+1))。可通过调整PSC和ARR来设定所需的PWM频率。"
+    "explanation": "选A。STM32F103的ADC分辨率为12位，不是16位——说16位是错误的。B正确：18通道(16外部+2内部温度/VREFINT)。C正确：ADCCLK≤14MHz。D正确：支持单次和连续转换模式。A是题目要求的错误说法。"
   },
   {
     "id": 91,
@@ -1065,7 +1064,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "高级定时器(TIM1/TIM8)支持互补输出和死区插入，适用于电机控制等需要上下桥臂驱动的场景。"
+    "explanation": "选C。正确答案是\"该位为0：关闭扫描模式\"。 A\"该位由硬件设置和清除，用于开启或关闭扫描模式\" 与正确选项不符。 B\"该位为1：关闭扫描模式\" 与正确选项不符。 D\"以上全对\" 与正确选项不符。"
   },
   {
     "id": 92,
@@ -1078,7 +1077,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "输入捕获功能可以测量输入信号的周期和占空比，常用于脉冲宽度测量和频率测量。"
+    "explanation": "选B。输入捕获模式在捕获到指定边沿时锁存计数器值，通过两次捕获值之差可计算信号周期、频率和占空比。A只能输出信号。C只能用来生成PWM。D只能用于脉冲计数。"
   },
   {
     "id": 93,
@@ -1091,7 +1090,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "输出比较模式可以在计数值与CCR匹配时翻转/置位/复位输出引脚，产生特定时序信号。"
+    "explanation": "选B。正确答案是\"成本(经济、可靠)\"。 A\"实时性(中断响应时间、任务切换时间等)\" 与正确选项不符。 C\"尺寸(可裁剪性 )\" 与正确选项不符。 D\"可扩展性(内核、中间件)\" 与正确选项不符。"
   },
   {
     "id": 95,
@@ -1104,7 +1103,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "看门狗定时器用于监控程序运行状态，程序跑飞时自动复位系统，提高系统可靠性。"
+    "explanation": "选C。看门狗(独立IWDG/窗口WWDG)定时器用于检测程序跑飞：没按时喂狗→自动复位MCU。A只有中断不对(主要功能是复位)。B只能由硬件复位不对。D只在调试时用不对。"
   },
   {
     "id": 96,
@@ -1117,7 +1116,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "嵌入式系统CPU字长多样，从4位到64位都有，Cortex-M3是32位处理器，并非嵌入式CPU都是8位的。"
+    "explanation": "选D。正确答案是\"虚拟内存\"。 A\"公开源代码\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"中断管理\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"系统服务\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 97,
@@ -1130,7 +1129,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "嵌入式微处理器(MPU)是由通用CPU演变而来的，只保留与嵌入式应用相关的功能。"
+    "explanation": "选D。MPU(嵌入式微处理器)由通用CPU演变而来，只保留嵌入式相关功能，功耗和成本较通用CPU更低。A不准确。B正确但不如D全面。C只在某些场景成立。"
   },
   {
     "id": 98,
@@ -1143,7 +1142,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "嵌入式微控制器(MCU)将CPU、RAM、ROM、I/O接口等集成在一块芯片上，是目前嵌入式系统工业的主流。"
+    "explanation": "选C。正确答案是\"设备管理\"。 A\"信号量\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"时钟管理\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"任务管理\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 99,
@@ -1156,7 +1155,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "哈佛结构具有独立的程序存储器和数据存储器及独立总线，允许同时取指和访问数据，提高执行效率。"
+    "explanation": "选B。正确答案是\"删除状态\"。 A\"等待状态\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"中断服务状态\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"睡眠状态\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 101,
@@ -1169,7 +1168,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "RISC(精简指令集)的指令长度固定、寻址方式简单，适合流水线执行。ARM处理器采用RISC架构。"
+    "explanation": "选C。正确答案是\"OSTimeDlyHMSM()\"。 A\"OSMutexPend()\" 与正确选项不符。 B\"OSTaskIdle()\" 与正确选项不符。 D\"OSSemPend()\" 与正确选项不符。"
   },
   {
     "id": 102,
@@ -1182,7 +1181,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "CISC(复杂指令集)指令长度可变、功能复杂，x86处理器采用CISC架构。"
+    "explanation": "选D。CISC(复杂指令集)特点：指令长度可变(1~15字节)、功能复杂、一条指令可完成多步操作。x86/x64采用CISC。A/B描述是RISC特征。C ARM是RISC不是CISC。"
   },
   {
     "id": 103,
@@ -1195,7 +1194,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "ARM Cortex-M系列面向微控制器应用，具有低功耗、低成本、快速中断响应等特点。"
+    "explanation": "选D。正确答案是\"0x10\"。 A\"0x15\" 与正确选项不符。 B\"0x1A\" 与正确选项不符。 C\"0x1F\" 与正确选项不符。"
   },
   {
     "id": 104,
@@ -1208,7 +1207,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "DSP针对乘累加(MAC)等运算做了硬件优化，特别适合FFT、FIR滤波等数字信号处理算法。"
+    "explanation": "选C。DSP处理器针对乘累加(MAC)和信号处理算法做了硬件优化，最适合FFT、FIR滤波等密集运算。A MPU通用处理无此优化。B MCU通常无MAC硬件单元。D GPU用于图形处理非信号处理。"
   },
   {
     "id": 105,
@@ -1221,7 +1220,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "RS-485最长通信距离约1200米，RS-232仅约15米，两者通信距离相差很大。"
+    "explanation": "选D。正确答案是\"0x00\"。 A\"0x25\" 与正确选项不符。 B\"0x4A\" 与正确选项不符。 C\"0x6F\" 与正确选项不符。"
   },
   {
     "id": 106,
@@ -1234,7 +1233,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "数字音频数字化处理的标准顺序为：采样→量化→编码，这是A/D转换的通用流程。"
+    "explanation": "选C。数字音频数字化流程严格按：采样(Sampling)→量化(Quantization)→编码(Encoding)顺序进行。A、B顺序错乱。D缺失量化步骤。"
   },
   {
     "id": 107,
@@ -1247,7 +1246,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "Nyquist采样定理要求采样频率至少为信号最高频率的2倍。CD音质采用44.1kHz采样率。"
+    "explanation": "选D。正确答案是\"实时操作系统\"。 A\"片上系统\" 与正确选项不符。 B\"先进精简指令集机器\" 与正确选项不符。 C\"存储器管理单元\" 与正确选项不符。"
   },
   {
     "id": 108,
@@ -1260,7 +1259,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "量化位数决定信号的信噪比。每增加1位，信噪比约提高6dB。16位量化对应约96dB动态范围。"
+    "explanation": "选C。正确答案是\"嵌入式系统的CPU比通用计算机简单得多，它们都是8位字长的处理器\"。 A\"嵌入式系统由硬件和软件两部分组成\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"嵌入式系统硬件的主体是中央处理器(CPU)和存储器\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"嵌入式系统通过输入/输出(I/O)接口和输入/输出设备与外部\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 109,
@@ -1273,7 +1272,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "PWM DAC利用PWM+低通滤波器实现D/A转换，是一种低成本的简易DAC方案。"
+    "explanation": "选D。PWM+低通滤波器可实现简易D/A转换(PWM DAC)，通过调整占空比改变平均电压。A直接输出不能做DAC。B只能输出高低电平。C不能完成D/A转换。"
   },
   {
     "id": 110,
@@ -1286,7 +1285,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "逐次逼近型(SAR)ADC在速度和精度之间取得了很好的平衡，STM32F103内置的就是SAR型ADC。"
+    "explanation": "选A。正确答案是\"嵌入式处理器本身就是一个嵌入式最小硬件系统\"。 B\"嵌入式处理器只有在供电的情况下才有可能正常工作\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"嵌入式处理器工作时需要时钟信号\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"大多数基于ARM处理器核的嵌入式处理器芯片都有调试接口\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 111,
@@ -1299,7 +1298,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "Σ-Δ型ADC采用过采样和噪声整形技术，可实现很高的分辨率(24位以上)，但转换速度较慢。"
+    "explanation": "选B。Σ-Δ ADC采样率高、分辨率可达24位——缺点是速度较慢，适合高精度低频信号(如称重传感器)。A不适合低频不对。C分辨率低不对。D不适合高精度不对。"
   },
   {
     "id": 112,
@@ -1312,7 +1311,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "DAC(Digital-to-Analog Converter)将数字量转换为模拟电压输出。"
+    "explanation": "选A。正确答案是\"程序存储空间与数据存储空间分离\"。 B\"存储空间与IO空间分离\" 与正确选项不符。 C\"程序存储空间与数据存储空间合并\" 与正确选项不符。 D\"存储空间与IO空间合并\" 与正确选项不符。"
   },
   {
     "id": 113,
@@ -1325,7 +1324,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "Flash存储器断电后数据不丢失，嵌入式系统中用于存储程序代码和固定数据。"
+    "explanation": "选D。正确答案是\"高性能\"。 A\"低成本\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 B\"低功耗\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"实时要求高\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 114,
@@ -1338,7 +1337,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "SRAM读写速度快，但断电丢失数据，嵌入式系统中用作数据存储和堆栈空间。"
+    "explanation": "选C。正确答案是\"程序存储空间与数据存储空间合并\"。 A\"程序存储空间与数据存储空间分离\" 与正确选项不符。 B\"存储空间与 IO 空间分离\" 与正确选项不符。 D\"存储空间与 IO 空间合并\" 与正确选项不符。"
   },
   {
     "id": 115,
@@ -1351,7 +1350,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "EEPROM可电擦除且可按字节擦写，比Flash更灵活但容量较小，常用于存储配置参数。"
+    "explanation": "选B。正确答案是\"嵌入式微控制器\"。 A\"嵌入式微处理器\" 与正确选项不符。 C\"嵌入式DSP处理器\" 与正确选项不符。 D\"以上都不合适\" 与正确选项不符。"
   },
   {
     "id": 116,
@@ -1364,7 +1363,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "Nor Flash支持XIP(片内执行)，可直接运行代码；NAND Flash容量大、价格低，适合大量数据存储。"
+    "explanation": "选C。正确答案是\"嵌入式DSP处理器\"。 A\"嵌入式微处理器\" 与正确选项不符。 B\"嵌入式微控制器\" 与正确选项不符。 D\"以上都不合适\" 与正确选项不符。"
   },
   {
     "id": 117,
@@ -1377,7 +1376,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "NAND Flash存在位翻转问题，需要ECC纠错；坏块管理也是NAND Flash必需的软件功能。"
+    "explanation": "选B。正确答案是\"RS-485接口标准的最长通信距离与RS-232接口标准的最长通信距离相当\"。 A\"基于UART可以构成RS-232接口和RS-485接口\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 C\"RS-485标准采用差分信号传输方式，因此具有很强的抗共模干\" 表述本身符合事实（是正确说法，而题目要求选错误项）。 D\"通过RS-485可构成主从式多机通信系统，主机可采用轮询方式\" 表述本身符合事实（是正确说法，而题目要求选错误项）。"
   },
   {
     "id": 118,
@@ -1390,7 +1389,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "位带操作将位带区的每个位映射到别名区的一个32位字，通过操作别名区实现单指令的原子位操作。"
+    "explanation": "选C。正确答案是\"采样、量化、编码\"。 A\"量化、采样、编码\" 与正确选项不符。 B\"采样、编码、量化\" 与正确选项不符。 D\"编码、采样、量化\" 与正确选项不符。"
   },
   {
     "id": 119,
@@ -1403,7 +1402,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "Cortex-M3支持两个位带区：SRAM区(0x20000000)和外设区(0x40000000)，各1MB。"
+    "explanation": "选D。正确答案是\"ARMCortex-M是面向控制的嵌入式Cortex处理器\"。 A\"RISC是复杂指令集结构计算机\" 与正确选项不符。 B\"哈佛结构是程序与数据统一的存储结构\" 与正确选项不符。 C\"ARM处理器的指令编码全部为32位\" 与正确选项不符。"
   },
   {
     "id": 120,
@@ -1416,7 +1415,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"嵌入式处理器片内一般不包括存储器，组成最小系统时必须外扩存储器\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。嵌入式处理器片内一般包含一定容量的SRAM和Flash，组成最小系统时不一定需要外扩存储器。A、B、C正确：最小系统需时钟、电源、复位电路。"
   },
   {
     "id": 121,
@@ -1429,7 +1428,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"应用软件必须在基于嵌入式操作系统平台上来开发\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选B。应用软件不一定非要在嵌入式OS上开发——裸机程序(bare-metal)没有OS也完全可行。A、C、D是嵌入式开发特点：需交叉编译、需调试工具、最终需固化。"
   },
   {
     "id": 122,
@@ -1442,7 +1441,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"传感器\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。传感器是输入设备而非开发调试工具。A逻辑分析仪、B示波器、C JTAG仿真器都是常用的嵌入式开发调试工具。"
   },
   {
     "id": 123,
@@ -1455,7 +1454,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式开发需要在宿主机(PC)上用交叉编译器生成目标机代码，因此需要一个交叉编译环境。"
+    "explanation": "选B。嵌入式开发在宿主机(PC)上编译，在目标机(ARM等)上运行，必须使用交叉编译环境生成目标机代码。A本机编译用于PC开发。C/D概念混淆。"
   },
   {
     "id": 124,
@@ -1468,7 +1467,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "在STM32中，Reset(复位)具有最高的优先级(-3)，其他任何中断都无法打断复位处理。"
+    "explanation": "选A。Cortex-M3异常优先级数值：Reset=-3(最高)、NMI=-2、HardFault=-1。A正确。B/C/D优先级低于Reset。"
   },
   {
     "id": 125,
@@ -1481,7 +1480,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "位带别名地址公式：Alias = Base + (Addr-0x40000000)×32 + bit×4。0x40011111第1位的别名地址 = 0x42000000 + 0x11111×32 + 1×4 = 0x42222224。"
+    "explanation": "选D。外设位带别名公式：Alias=0x42000000+(Addr-0x40000000)×32+bit×4。0x40011111第1位=0x42000000+0x11111×32+1×4=0x42222224。A/B/C计算错误。"
   },
   {
     "id": 126,
@@ -1494,7 +1493,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "同上公式：0x40011111第2位的别名地址 = 0x42000000 + 0x11111×32 + 2×4 = 0x42222228。"
+    "explanation": "选C。同上公式：0x40011111第2位=0x42000000+0x11111×32+2×4=0x42222228。A/B/D计算有误。"
   },
   {
     "id": 128,
@@ -1507,7 +1506,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "GPIOE ODR在0x4001180C，第2位别名地址 = 0x42000000 + 0x1180C×32 + 2×4 = 0x42230188。"
+    "explanation": "选C。GPIOE ODR在0x4001180C，第2位别名=0x42000000+0x1180C×32+2×4=0x42230188。A/B/D公式计算错误。"
   },
   {
     "id": 129,
@@ -1520,7 +1519,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "GPIOB ODR在0x40010C0C，第4位别名地址 = 0x42000000 + 0x10C0C×32 + 4×4 = 0x42218190。"
+    "explanation": "选B。GPIOB ODR在0x40010C0C，第4位别名=0x42000000+0x10C0C×32+4×4=0x42218190。A/C/D位偏移或基址错误。"
   },
   {
     "id": 130,
@@ -1533,7 +1532,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "GPIOB ODR在0x40010C0C，第0位别名地址 = 0x42000000 + 0x10C0C×32 + 0×4 = 0x42218180。"
+    "explanation": "选B。GPIOB ODR在0x40010C0C，第0位别名=0x42000000+0x10C0C×32+0×4=0x42218180。A/C/D计算错误。"
   },
   {
     "id": 131,
@@ -1546,7 +1545,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "I/O接口的类型和数目不直接影响CPU的指令执行速度。CPU速度主要取决于主频、流水线、指令集、Cache等。"
+    "explanation": "选D。I/O接口的类型和数目不影响CPU内部指令执行速度。A主频直接影响、B流水线影响IPC、C Cache影响内存访问速度，三者都直接影响CPU性能。"
   },
   {
     "id": 132,
@@ -1559,7 +1558,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"嵌入式系统性能较低，价格也比较便宜\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选B。嵌入式系统性能不一定低、价格不一定便宜——军工/航天嵌入式系统性能极高且价格昂贵。A、C、D正确：嵌入式系统硬件包含CPU+存储器+外设、软件可固化、功能可定制。"
   },
   {
     "id": 133,
@@ -1572,7 +1571,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"高主频\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。嵌入式CPU与通用CPU的不同特点包括：支持实时处理(A)、低功耗设计(B)、集成测试电路(D)。高主频(C)是通用CPU的特点，嵌入式CPU通常主频不高。"
   },
   {
     "id": 134,
@@ -1585,7 +1584,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"使用闪存卡(如cF卡、sD卡等)作为内存，用于存储所运行的软件\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选C。闪存卡(CF/SD卡)在数码相机中用作外部存储(存照片)，不是内存(RAM)——内存用于运行程序。A、B、D正确描述了数码相机的软硬件组成。"
   },
   {
     "id": 135,
@@ -1598,7 +1597,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"LED数码管由多个LED组成，这些LED有共阳极接法和共阴极接法两种\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选D。LED数码管有共阳极和共阴极两种接法——这是标准分类。A说法不全面。B七段+小数点共8段。C静态和动态都可驱动。"
   },
   {
     "id": 136,
@@ -1611,7 +1610,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"与RS-485标准相比，RS-232标准的通信距离更远、通信速率更高\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选B。RS-232通信距离约15米，RS-485可达1200米——RS-485距离远得多、速率也更高。A、C、D正确描述了RS-485和RS-232的特点。"
   },
   {
     "id": 137,
@@ -1624,7 +1623,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"字长均为32位或64位，8位和16位的CPU已经被淘汰\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选C。8位和16位CPU并未被淘汰——8051(8位)在家电、消费电子中仍大量使用。A、B、D正确描述了嵌入式CPU的特点。"
   },
   {
     "id": 138,
@@ -1637,7 +1636,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"嵌入式系统应用软件往往内部结构精简化、代码轻量化、占用存储资源少\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选D。嵌入式应用软件追求精简、轻量、占用资源少——这与通用PC软件形成鲜明对比。A描述的是通用软件特点。B描述不准确。C嵌入式软件不一定结构简单。"
   },
   {
     "id": 139,
@@ -1650,7 +1649,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"嵌入式系统的应用和发展是一个新生事物，它还只有十年左右的历史\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选D。嵌入式系统已有数十年历史(从1970s微处理器诞生算起)，不是仅十年左右的新生事物。A、B、C正确描述了嵌入式系统的特征。"
   },
   {
     "id": 140,
@@ -1663,7 +1662,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"必须是实时多任务系统，仅适用于特定CPU\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选C。嵌入式OS不必是实时多任务系统(有些简单嵌入式系统不用OS)，也不仅适用特定CPU(Linux支持几十种架构)。A、B、D对嵌入式OS的描述成立。"
   },
   {
     "id": 141,
@@ -1676,7 +1675,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"系统占用了6个任务，保留优先级为0、1、2、3、4、5\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选C。uC/OS-II保留优先级0、1、2、3和OS_LOWEST_PRIO等，不是0~5全部占用，具体取决于配置。A、B、D对uC/OS的描述基本正确。"
   },
   {
     "id": 142,
@@ -1689,7 +1688,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"硬件抽象层是操作系统内核的重要组成部分\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选D。硬件抽象层(HAL)位于OS和硬件之间，不是OS内核的组成部分。A、B、C正确描述了HAL的作用。"
   },
   {
     "id": 143,
@@ -1702,7 +1701,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "μC/OS-II 2.5版本最多支持64个任务(含系统任务)，实际应用中可用任务数通常更少。"
+    "explanation": "选C。uC/OS-II v2.5最多支持64个任务(包括系统任务)。A 255是uC/OS-III的值。B 256不对。D无限制不对。"
   },
   {
     "id": 144,
@@ -1715,7 +1714,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"嵌入式系统不需要操作系统\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选B。嵌入式系统可以需要也可以不需要OS——这不是\"特点\"问题。A、C、D是嵌入式系统的真实特点。"
   },
   {
     "id": 145,
@@ -1728,7 +1727,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"可执行多任务\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。可执行多任务是通用OS也具备的能力，不是嵌入式系统\"独具\"的特点。A、B、D是嵌入式系统区别于通用系统的特征。"
   },
   {
     "id": 146,
@@ -1741,7 +1740,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "os_core.c是μC/OS-II的内核代码，与CPU无关，移植时不需要修改。os_cpu_c.c、os_cpu_a.asm等与具体CPU相关。"
+    "explanation": "选B。os_core.c是uC/OS-II的内核调度代码，与CPU架构无关，移植时不需要修改。A os_cpu_c.c需修改(CPU相关C代码)。C os_cpu_a.asm需重写(汇编)。D os_cfg.h需按应用配置。"
   },
   {
     "id": 147,
@@ -1754,7 +1753,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式系统最核心的定义：以应用为中心，软硬件可裁剪的专用计算机系统。"
+    "explanation": "选B。嵌入式系统最核心定义：以应用为中心，软硬件可裁剪的专用计算机系统。A强调性能不全。C强调实时性不全面。D强调低成本太片面。"
   },
   {
     "id": 148,
@@ -1767,7 +1766,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"通用性强\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。嵌入式系统是\"专用\"的——通用性强恰是PC的特点。A专用性强、B资源受限、C实时性要求都是嵌入式系统典型特点。"
   },
   {
     "id": 149,
@@ -1780,7 +1779,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"可裁剪性\"是嵌入式系统的核心特征之一，指根据具体应用需求选择必要的软硬件模块，不用的可以去掉。"
+    "explanation": "选B。可裁剪性指根据具体应用需求裁剪软硬件，不需要的模块可以移除。A不加选择包含所有功能违反可裁剪原则。C/D不准确。"
   },
   {
     "id": 150,
@@ -1793,7 +1792,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "嵌入式系统的软件需要掉电不丢失，因此存储在ROM/Flash等非易失性存储器中。"
+    "explanation": "选C。嵌入式软件需掉电后仍保留，存储在ROM/Flash等非易失性存储器中。A RAM掉电丢失。B硬盘体积大功耗高。D寄存器容量极小。"
   },
   {
     "id": 151,
@@ -1806,7 +1805,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"独立的高性能显卡\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。嵌入式系统通常不需要独立高性能显卡(集成GPU或简单显示即可)。A CPU/MCU、B内存、D外设接口均为嵌入式硬件必要组成。"
   },
   {
     "id": 152,
@@ -1819,7 +1818,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式产品通常面向消费市场，对硬件物料成本(BOM Cost)非常敏感，直接影响产品竞争力。"
+    "explanation": "选B。嵌入式产品大多面向消费市场，成本极敏感——降低BOM成本是核心竞争力。A功耗也重要但成本优先。C体积不是最敏感。D外观不是核心。"
   },
   {
     "id": 153,
@@ -1832,7 +1831,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "纯手动机械钟表不包含任何电子部件和可编程器件，完全不属于嵌入式系统范畴。"
+    "explanation": "选C。纯手动机械钟表无任何电子部件和可编程器件，完全不属于嵌入式系统。A/B/D均包含嵌入式处理器。"
   },
   {
     "id": 154,
@@ -1845,7 +1844,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "ARM架构处理器在嵌入式领域占据绝对主导地位，全球超过90%的嵌入式设备使用ARM处理器。"
+    "explanation": "选B。ARM架构占据嵌入式处理器市场90%以上份额。A x86功耗高不适合大多数嵌入式场景。C MIPS份额小。D PowerPC仅在少数领域使用。"
   },
   {
     "id": 155,
@@ -1858,7 +1857,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "MCU将CPU、RAM、ROM和常用外设集成在一个芯片内，而MPU通常只有CPU核心，需要外加内存和外设芯片。"
+    "explanation": "选A。MCU(如STM32)片内集成Flash、RAM、GPIO等外设；MPU(如i.MX)通常需要外部DDR和Flash。B说法相反。C两者都含CPU。D两者都不是FPGA。"
   },
   {
     "id": 156,
@@ -1871,7 +1870,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "RAM在嵌入式系统中用作运行时数据存储，包括全局变量、堆栈、堆等。程序代码存储在Flash中。"
+    "explanation": "选C。RAM在嵌入式系统中用作运行时数据存储：全局/静态变量、堆(Heap)、栈(Stack)。A程序代码存在Flash中。B不是处理器。D掉电不丢失的是Flash。"
   },
   {
     "id": 157,
@@ -1884,7 +1883,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ARM Cortex-M系列是业界最广泛使用的嵌入式处理器，面向微控制器应用。"
+    "explanation": "选C。ARM Cortex-M是典型嵌入式处理器系列(MCU)，市场占有率极高。A Intel Core是通用PC处理器。B AMD Ryzen也是PC处理器。D NVIDIA GPU用于图形处理。"
   },
   {
     "id": 158,
@@ -1897,7 +1896,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "DSP芯片针对乘累加(MAC)等信号处理运算做了专有硬件优化，广泛应用于音视频编解码、基带信号处理等。"
+    "explanation": "选B。DSP针对乘累加(MAC)指令做了硬件优化，天然适合音视频编解码、基带信号处理、FFT等。A纯逻辑控制用MCU即可。C数据存储用Flash。D显示用GPU。"
   },
   {
     "id": 159,
@@ -1910,7 +1909,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "看门狗定时器(Watchdog)监控程序运行，当程序跑飞未及时喂狗时，自动触发系统复位。"
+    "explanation": "选C。看门狗定时器的主要作用：程序跑飞/死机时，超时未\"喂狗\"则自动复位系统。A计时只是手段不是目的。B中断不是其主要功能。D调试不是看门狗用途。"
   },
   {
     "id": 160,
@@ -1923,7 +1922,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"将CPU、内存、外设等集成在一个芯片上\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。SoC(System on Chip)将CPU、内存控制器、外设等全部集成在一个芯片上。A FPGA不是SoC的必要组成。C SoC可以包含多个处理器。D SoC通常有外设接口。"
   },
   {
     "id": 161,
@@ -1936,7 +1935,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "外部中断的主要作用是让CPU能异步响应外部事件，而不需要通过轮询方式浪费CPU时间。"
+    "explanation": "选B。外部中断让CPU无需轮询即可快速异步响应外部事件(按键、传感器、通信状态等)，显著提高效率。A降低功耗是附加好处。C/D不是主要作用。"
   },
   {
     "id": 162,
@@ -1949,7 +1948,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "Flash存储器可以多次擦除和写入，且断电后数据不丢失，是嵌入式系统存储程序代码的首选介质。"
+    "explanation": "选B。Flash可多次擦写(≥10K次)、掉电不丢失数据，是嵌入式存储程序的首选。A掉电丢失是RAM特征。C只可写一次是OTP/ROM。D不可在线编程是Mask ROM。"
   },
   {
     "id": 163,
@@ -1962,7 +1961,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "I2C总线只需SDA和SCL两根线，功耗低，特别适合板内短距离、低功耗的设备互联。"
+    "explanation": "选B。I2C仅需SCL+SDA两根线，低速率(100k/400k/1Mbps)、低功耗，最适板内短距离通信。A RS-232电平高功耗大。C VGA是视频接口。D PCIe是高速总线。"
   },
   {
     "id": 164,
@@ -1975,7 +1974,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "FreeRTOS是开源的嵌入式实时操作系统，具有抢占式内核，广泛应用于各种嵌入式平台。"
+    "explanation": "选C。FreeRTOS是开源、抢占式、轻量级RTOS，广泛用于MCU。A Windows是通用OS非实时。B Linux默认非硬实时。D iOS是移动OS。"
   },
   {
     "id": 165,
@@ -1988,7 +1987,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式Linux在裸机程序的基础上提供了多任务调度、文件系统和完整的TCP/IP网络协议栈，大幅降低开发难度。"
+    "explanation": "选B。嵌入式Linux在裸机基础上提供：多任务调度、VFS文件系统、TCP/IP网络协议栈、设备驱动框架等，大幅降低开发复杂度。A裸机程序也能运行。C/D不准确。"
   },
   {
     "id": 166,
@@ -2001,7 +2000,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"Oracle Database\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。Oracle Database是数据库管理系统，不是操作系统。A、B、C均为典型嵌入式OS。"
   },
   {
     "id": 167,
@@ -2014,7 +2013,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "RTOS的\"确定性\"指任务响应时间和完成时间是可预测的，这是实时系统最关键的特性。"
+    "explanation": "选B。RTOS的确定性(Determinism)指任务响应时间可预测、有上界——这是实时系统最核心的特性。A执行快不一定可预测。C/D不准确。"
   },
   {
     "id": 168,
@@ -2027,7 +2026,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "优先级继承协议让持有资源的低优先级任务临时获得等待资源的高优先级任务的优先级，避免被中优先级任务无限期阻塞。"
+    "explanation": "选B。优先级继承(Priority Inheritance)：低优先级持有资源时临时获得等待者的高优先级，防止被中优先级任务抢占无限期阻塞。A时间片轮转不能解决反转。C/D不解决此问题。"
   },
   {
     "id": 169,
@@ -2040,7 +2039,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "\"没有操作系统，直接运行在硬件上\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选A。裸机程序(bare-metal)是没有OS、直接运行在硬件上的程序——开发者需自行管理所有硬件和外设。B在OS上开发不是裸机。C/D不准确。"
   },
   {
     "id": 170,
@@ -2053,7 +2052,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "FreeRTOS和RIOT OS专为IoT和资源受限设备设计，最小RAM需求仅几KB。"
+    "explanation": "选B。FreeRTOS和RIOT OS专为资源极受限的IoT设备设计，仅需几KB RAM即可运行。A Linux需MB级RAM。C Windows 10 IoT也较大。D Android更庞大。"
   },
   {
     "id": 171,
@@ -2066,7 +2065,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "微秒级响应要求极低的延迟抖动，裸机中断处理或硬实时RTOS(如VxWorks)最适合这种场景。"
+    "explanation": "选B。微秒级响应需要极低且确定的中断延迟——裸机中断或硬实时RTOS(如VxWorks、μC/OS)适合。A通用Linux延迟过大不可预测。C Android更不行。D大型OS不行。"
   },
   {
     "id": 172,
@@ -2079,7 +2078,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "Bootloader是系统上电后运行的第一段程序，负责初始化关键硬件(时钟、内存等)，然后加载操作系统内核或应用程序。"
+    "explanation": "选B。Bootloader是系统上电后第一段代码，初始化时钟/SDRAM/存储等关键硬件，然后加载并跳转到OS内核或应用程序。A直接运行应用程序不是Bootloader职责。C/D不准确。"
   },
   {
     "id": 173,
@@ -2092,7 +2091,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103系列基于ARM Cortex-M3内核，该内核专为微控制器应用设计。"
+    "explanation": "选B。STM32F103系列采用ARM Cortex-M3内核——32位、三级流水线、哈佛架构。A Cortex-M0是更低端核心。C Cortex-M4带DSP指令。D Cortex-M7更高性能。"
   },
   {
     "id": 174,
@@ -2105,7 +2104,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "正确答案为 B：ARMv7-M。"
+    "explanation": "选B。Cortex-M3采用ARMv7-M架构。ARMv6-M用于Cortex-M0/M0+。ARMv8-M用于Cortex-M23/M33。ARMv7-A用于Cortex-A系列。"
   },
   {
     "id": 175,
@@ -2118,7 +2117,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103的PLL将外部晶振倍频后，最大系统时钟频率可达72MHz。"
+    "explanation": "选B。STM32F103最高SYSCLK=72MHz(8MHz HSE→PLL×9倍频)。A 48MHz是USB时钟。C 120MHz不是F103的指标。D 168MHz是F4系列的频率。"
   },
   {
     "id": 176,
@@ -2131,7 +2130,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103命名规则中\"C8\"表示Flash容量：C=64/128KB系列，\"8\"表示64KB。C8=64KB Flash。"
+    "explanation": "选C。STM32F103命名：C=64/128KB Flash系列，\"8\"表示64KB。C8T6=64KB Flash、LQFP48封装。A \"C\"不表示RAM容量。B \"8\"不表示128KB。D不表示主频。"
   },
   {
     "id": 177,
@@ -2144,7 +2143,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103主要通过JTAG(5线)和SWD(2线)两种方式调试和下载程序。"
+    "explanation": "选C。STM32F103支持JTAG(5线：TDI/TDO/TMS/TCK/TRST)和SWD(2线：SWDIO+SWCLK)两种调试接口。A只支持JTAG不全面。B SWD是2线不是3线。D没有SWIM接口(SWIM是STM8的)。"
   },
   {
     "id": 178,
@@ -2157,7 +2156,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "Cortex-M3内核为32位处理器，内部寄存器(R0-R15)均为32位宽。"
+    "explanation": "选C。Cortex-M3为32位处理器，所有通用寄存器(R0~R15)均为32位宽。A 8位是8位MCU。B 16位是16位MCU。D 64位是高端应用处理器。"
   },
   {
     "id": 179,
@@ -2170,7 +2169,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3的位带功能将别名区的32位字映射到位带区的单个位，实现对单个位的原子读写操作。"
+    "explanation": "选A。Cortex-M3位带操作将别名区32位字映射到位带区1位，实现原子位读写(单指令完成，无需读-改-写)。B只能读不能写不对。C需关中断不对(硬件保证原子性)。D仅在特权模式不对。"
   },
   {
     "id": 180,
@@ -2183,7 +2182,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "在Cortex-M3异常编号中，Reset的优先级数值为-3(最高)，NMI为-2，HardFault为-1。"
+    "explanation": "选A。Cortex-M3异常编号中：Reset=-3(最高优先级)、NMI=-2、HardFault=-1。数值越小优先级越高。B 0不是最高(通常为外设中断起始)。C 1更低。D 3最低。"
   },
   {
     "id": 181,
@@ -2196,7 +2195,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "ICode总线是Cortex-M3的指令总线，用于从Flash(0x00000000~)取指，连接Flash接口。"
+    "explanation": "选B。ICode总线：Cortex-M3的指令总线，专门用于从Code区(0x00000000~)取指令。A DCode总线用于数据访问。C System总线也用于数据。D DMA总线与内核总线不同。"
   },
   {
     "id": 182,
@@ -2209,7 +2208,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103命名中\"Z\"封装代码表示LQFP144(144引脚)。"
+    "explanation": "选C。STM32F103命名中封装代码：Z=LQFP144(144脚)。A \"Z\"不表示Flash大小。B不表示RAM大小。D不表示主频。"
   },
   {
     "id": 183,
@@ -2222,7 +2221,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Flash存储器在嵌入式系统中主要存放程序代码和只读常量(.text段和.rodata段)。"
+    "explanation": "选A。Flash存储程序代码(.text段)和只读常量(.rodata段)，掉电不丢失。B堆栈在SRAM中。C动态内存在堆中(也在SRAM)。D临时数据也在RAM中。"
   },
   {
     "id": 186,
@@ -2235,7 +2234,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103的PLL锁相环将输入时钟倍频，最大输出72MHz作为SYSCLK。"
+    "explanation": "选B。STM32F103的PLL将HSE(8MHz)×9=72MHz输出。A 48MHz是PLL×6或USB时钟。C 36MHz是APB1最大时钟。D 144MHz是F4系列频率。"
   },
   {
     "id": 187,
@@ -2248,7 +2247,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3的存储器映射中，Code区从0x00000000开始，存放程序代码(Vector Table + Code)。"
+    "explanation": "选A。Cortex-M3存储器映射：Code区从0x00000000开始，存放向量表+程序代码。B SRAM从0x20000000开始。C外设从0x40000000开始。D外部RAM从0x60000000开始。"
   },
   {
     "id": 188,
@@ -2261,7 +2260,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103的外设寄存器(如GPIO、USART、定时器等)全部映射在0x40000000~0x5FFFFFFF区域。"
+    "explanation": "选C。STM32F103外设寄存器映射在0x40000000~0x5FFFFFFF(APB1/APB2/AHB外设)。A 0x00000000是Code区。B 0x20000000是SRAM区。D 0xE0000000是Cortex-M内部外设。"
   },
   {
     "id": 189,
@@ -2274,7 +2273,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "HSE外部高速晶振典型值为4~16MHz，最常用的是8MHz晶振，经PLL倍频到72MHz。"
+    "explanation": "选A。HSE典型频率为4~16MHz，最常用8MHz晶振(经PLL×9得72MHz)。B 72MHz是PLL输出频率。C 32.768kHz是LSE。D不准确。"
   },
   {
     "id": 190,
@@ -2287,7 +2286,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "AHB总线频率通常高于或等于APB2。当APB2分频系数为1时，APB2=AHB；大于1时，APB2<AHB。"
+    "explanation": "选B。AHB频率≥APB2：当APB2预分频=1时两者相等；分频>1时APB2=AHB/分频系数。A APB2可以等于AHB。C APB2不能超过AHB。D不一定是整数倍关系。"
   },
   {
     "id": 191,
@@ -2300,7 +2299,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "LSE(Low Speed External)使用32.768kHz晶振，为RTC和低功耗模式提供精确时钟源。"
+    "explanation": "选D。LSE(Low Speed External)使用32.768kHz晶振，为RTC和低功耗模式提供精确时钟。A HSI是内部8MHz。B HSE是外部高速晶振。C LSI是内部约40kHz RC振荡器。"
   },
   {
     "id": 192,
@@ -2313,7 +2312,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "切换系统时钟源只需设置RCC_CFGR寄存器的SW(系统时钟选择)位即可，无需其他特殊操作。"
+    "explanation": "选A。切换系统时钟只需设置RCC_CFGR的SW[1:0]位选择HSI/HSE/PLL。B还需要设置PLL。C需要硬件复位不对。D需要重新上电不对。"
   },
   {
     "id": 193,
@@ -2326,7 +2325,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "NVIC(Nested Vectored Interrupt Controller)是Cortex-M3内核中的嵌套向量中断控制器。"
+    "explanation": "选B。NVIC=Nested Vectored Interrupt Controller(嵌套向量中断控制器)，是Cortex-M内核的组成部分。A DMA是直接存储器访问。C EXTI是外部中断控制器。D MPU是存储器保护单元。"
   },
   {
     "id": 194,
@@ -2339,7 +2338,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103 NVIC支持约60个可屏蔽中断通道(加上16个系统异常，共支持约76个中断向量)。"
+    "explanation": "选C。STM32F103 NVIC支持约60个可屏蔽中断通道(IRQ0~IRQ59)。A 16个太少(是Cortex-M3系统异常数)。B 32个不够。D 128个超出实际值。"
   },
   {
     "id": 195,
@@ -2352,7 +2351,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "抢占优先级决定高优先级中断能否打断正在执行的低优先级中断(中断嵌套)。子优先级仅在同时挂起时仲裁顺序。"
+    "explanation": "选A。抢占优先级决定高中断能否打断低中断——抢占优先级高的可嵌套打断抢占优先级低的。B子优先级仅裁决同时挂起时的处理顺序。C/D说法不正确。"
   },
   {
     "id": 196,
@@ -2365,7 +2364,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "2位抢占+2位子优先级时，抢占优先级用2位表示，范围为0~3。"
+    "explanation": "选B。2位抢占+2位子优先级：抢占优先级用2bit表示→取值0~3。A 0~1是1bit表示。C 0~7是3bit。D 0~15是4bit全部分给抢占。"
   },
   {
     "id": 197,
@@ -2378,7 +2377,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "PendSV异常专为OS设计，优先级通常设为最低，确保退出ISR后才执行任务切换，不干扰中断响应。"
+    "explanation": "选C。PendSV(可挂起系统服务)异常专为RTOS设计——优先级设为最低，确保退出所有ISR后才执行任务上下文切换。A HardFault用于硬件错误。B SysTick提供系统节拍。D SVC用于系统调用。"
   },
   {
     "id": 198,
@@ -2391,7 +2390,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "SysTick是Cortex-M内核内置的24位递减定时器，通常作为RTOS的系统心跳(时钟节拍)或实现精确延时。"
+    "explanation": "选B。SysTick是Cortex-M内核内置24位递减定时器——在STM32中通常作为RTOS时钟节拍或HAL_Delay延时源。A只用于延时太片面。C调试不是主要用途。D精确度不如硬件定时器。"
   },
   {
     "id": 199,
@@ -2404,7 +2403,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ISER(Interrupt Set-Enable Register)是NVIC中的中断使能寄存器，写1使能对应中断。"
+    "explanation": "选A。ISER(Interrupt Set-Enable Register)：写1使能中断，写0无效。B ICER用于禁能。C ISPR用于挂起。D IABR只读反映活跃状态。"
   },
   {
     "id": 200,
@@ -2417,7 +2416,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "抢占优先级相同的中断不能互相打断。若同时挂起，子优先级($\rightarrow$响应优先级)高的先被执行。"
+    "explanation": "选B。抢占优先级相同→不能互相打断。两者同时挂起时，子优先级(响应优先级)数值小的优先处理。A互相打断不对。C/D不准确。"
   },
   {
     "id": 201,
@@ -2430,7 +2429,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103的EXTI支持16条外部中断线(EXTI0~EXTI15)，每条线可映射到对应编号的GPIO引脚。"
+    "explanation": "选B。EXTI支持16条外部中断线(EXTI0~EXTI15)。A 8条不够。C 24条超出。D 32条超出。"
   },
   {
     "id": 202,
@@ -2443,7 +2442,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "正确答案为 B：内存管理异常。"
+    "explanation": "选B。内存管理异常(MemManage)属于Cortex-M3的16个系统异常之一(异常编号4)，非外部中断。A EXTI0是外部中断。C USART1中断也是外设中断。D TIM2中断也是外设中断。"
   },
   {
     "id": 203,
@@ -2456,7 +2455,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103 GPIO引脚的最大输出速度可配置为50MHz(高速模式)。"
+    "explanation": "选C。STM32F103 GPIO输出最大速度：50MHz(响应速度最快的MODE)。A 10MHz和B 2MHz是较低速选项。D 100MHz超出F103能力。"
   },
   {
     "id": 204,
@@ -2469,7 +2468,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "开漏输出需要外部上拉电阻，适合需要线与逻辑的总线场景，典型应用是I2C的SDA和SCL。"
+    "explanation": "选B。开漏输出+外部上拉电阻是I2C总线(SDA+SCL)的标准配置——实现线与逻辑和多主仲裁。A USART TX用推挽输出。C SPI用推挽输出。D按键输入用上拉/下拉输入。"
   },
   {
     "id": 205,
@@ -2482,7 +2481,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "STM32F103 GPIO输入方式包括：浮空输入、上拉输入、下拉输入和模拟输入，不支持差分输入。"
+    "explanation": "选D。STM32F103 GPIO输入模式：浮空输入、上拉输入、下拉输入、模拟输入——不包括差分输入(差分信号需要专门的差分接收器)。A/B/C都是支持的输入模式。"
   },
   {
     "id": 206,
@@ -2495,7 +2494,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "TIM6和TIM7是STM32F103的基本定时器，只有向上计数和触发DAC功能，不连接外部引脚。"
+    "explanation": "选C。TIM6和TIM7是基本定时器(只有计数和触发DAC功能)。A TIM1是高级定时器。B TIM2是通用定时器。D TIM3也是通用定时器。"
   },
   {
     "id": 207,
@@ -2508,7 +2507,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103的通用定时器TIM2/TIM3/TIM4/TIM5是16位定时器，计数范围0~65535。"
+    "explanation": "选B。TIM2/3/4/5通用定时器计数器为16位(最大65535)。注意TIM2和TIM5的计数器实际可级联为32位(含重复计数器)。A 8位不对。C 24位是SysTick。D 32位不完全准确。"
   },
   {
     "id": 208,
@@ -2521,7 +2520,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103内置ADC为12位逐次逼近型(SAR)ADC，转换结果范围0~4095。"
+    "explanation": "选C。STM32F103内置ADC为12位SAR型，转换结果0~4095。A 8位不是(F0系列有12位)。B 10位不对。D 16位是F4/F7系列ADC精度。"
   },
   {
     "id": 209,
@@ -2534,7 +2533,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "USART是通用同步/异步收发器，支持同步和异步模式，但不包括以太网功能（以太网需要独立的MAC外设）。"
+    "explanation": "选D。USART支持同步/异步串口模式，不包括以太网(需要MAC+PHY)。A异步模式支持。B同步模式支持。C LIN/红外模式也可配置。"
   },
   {
     "id": 210,
@@ -2547,7 +2546,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "SWD(Serial Wire Debug)只需SWDIO(数据)和SWCLK(时钟)两根线即可完成调试和下载。"
+    "explanation": "选B。SWD仅需SWDIO(数据)+SWCLK(时钟)2根信号线。A 1根不够。C 3根是SWD+SWO(可选调试输出)。D 4根是JTAG最少引脚数(TMS/TCK/TDI/TDO)。"
   },
   {
     "id": 211,
@@ -2560,7 +2559,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "Cortex-M3上电后从地址0x00000000读取初始SP值(MSP)，该值是主堆栈指针的初始栈顶地址。"
+    "explanation": "选B。Cortex-M3上电从0x00000000读初始SP(主堆栈指针MSP的栈顶地址)，0x00000004读PC(复位向量)。A 0不对。C复位向量在0x04。D PC是0x04处的内容。"
   },
   {
     "id": 212,
@@ -2573,7 +2572,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "嵌入式开发环境由宿主机(Host PC，用于编辑和编译)和目标机(Target，嵌入式设备实际运行)两部分构成。"
+    "explanation": "选B。嵌入式开发环境=宿主机(PC，用于编辑/编译)+目标机(嵌入式设备，运行目标程序)。A只包含一台机器不对。C/D不准确。"
   },
   {
     "id": 213,
@@ -2586,7 +2585,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"宿主机与目标机可以是同一台机器\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选C。宿主机和目标机可以是同一台物理机器(如用QEMU模拟ARM环境在x86 PC上开发调试)。A不能是同一台太绝对。B/D不准确。"
   },
   {
     "id": 214,
@@ -2599,7 +2598,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "当宿主机(如x86 PC)与目标机(如ARM)的指令架构不同时，必须使用交叉编译工具链生成目标机可执行的代码。"
+    "explanation": "选A。宿主机(x86)与目标机(ARM)指令架构不同时，必须用交叉编译工具链(如arm-none-eabi-gcc)生成目标机代码。B同架构可用原生编译。C没有OS也可裸机。D优化等级不影响是否需要交叉编译。"
   },
   {
     "id": 215,
@@ -2612,7 +2611,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"交叉编译\"指在一种架构的宿主机上编译生成另一种架构目标机可运行的二进制代码。如x86 PC编译ARM代码。"
+    "explanation": "选B。交叉编译=在一种架构(A)的机器上编译出在另一种架构(B)上运行的代码。如x86 PC编译ARM二进制。A本地编译的定义。C/D概念的混淆。"
   },
   {
     "id": 216,
@@ -2625,7 +2624,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"提高代码运行效率\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。交叉编译是因为指令架构不同而非为了提高运行效率——效率取决于代码优化和编译器能力。A架构差异是根本原因。B OS不同也是原因。D内存差异也是原因。"
   },
   {
     "id": 217,
@@ -2638,7 +2637,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"目标机是嵌入式软件的实际运行环境\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。目标机=嵌入式软件的最终运行环境(嵌入式硬件板)。A描述的是宿主机(开发PC)。C目标机可以是仿真器/模拟器。D宿主机和目标机可通过串口/JTAG连接，不一定要网络。"
   },
   {
     "id": 218,
@@ -2651,7 +2650,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "嵌入式开发比通用软件开发多了\"代码固化\"环节，即需要将最终程序烧录/固化到目标机的ROM/Flash中。"
+    "explanation": "选C。嵌入式开发比通用PC开发多了\"代码固化\"——将程序烧录到目标机的Flash/ROM中。A/B/D两者都有。"
   },
   {
     "id": 219,
@@ -2664,7 +2663,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"不需要版本控制系统\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选D。嵌入式开发同样需要版本控制系统(Git/SVN)管理代码——这与PC开发没有区别。A、B、C正确描述了嵌入式开发环境的特点。"
   },
   {
     "id": 220,
@@ -2677,7 +2676,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "交叉编译(在不同架构间编译)和代码固化(烧录到ROM)是嵌入式开发与PC软件开发最根本的区别。"
+    "explanation": "选B。嵌入式 vs PC开发最根本区别：需要交叉编译(跨架构)+代码固化/烧录。A两者都需要调试。C两者都需测试。D两者都可使用IDE。"
   },
   {
     "id": 221,
@@ -2690,7 +2689,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "GCC(GNU Compiler Collection)是开源的编译器套件，支持ARM等多种目标平台交叉编译，广泛用于嵌入式开发。"
+    "explanation": "选B。GCC(GNU Compiler Collection)是开源免费的编译器框架——arm-none-eabi-gcc是嵌入式ARM开发最常用的开源交叉编译器。A Keil是商业软件。C IAR也是商业软件。D VS是微软IDE。"
   },
   {
     "id": 222,
@@ -2703,7 +2702,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "STM32开发常用IDE包括Keil MDK-ARM、IAR EWARM和STM32CubeIDE，三者都是业界主流选择。"
+    "explanation": "选D。Keil MDK-ARM、IAR EWARM、STM32CubeIDE都是STM32开发的主流IDE。A/B/C各只提了一种不全面。"
   },
   {
     "id": 223,
@@ -2716,7 +2715,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "正确答案为 C：JTAG调试。"
+    "explanation": "选C。JTAG调试属于硬件调试——通过专用调试接口访问CPU核和总线。A打印调试是软件手段。B断点调试软件层面。D代码review不是调试技术。"
   },
   {
     "id": 224,
@@ -2729,7 +2728,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"JTAG可以访问、控制处理器核和总线上的I/O设备\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选C。JTAG通过边界扫描链可以访问和控制处理器核及总线上的I/O外设。A JTAG不只测连接。B JTAG不影响运行速度。D不全面。"
   },
   {
     "id": 225,
@@ -2742,7 +2741,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"在线仿真器（ICE）是一种模拟CPU的设备\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。ICE(In-Circuit Emulator)是用专门硬件完全模拟目标CPU行为的仿真设备。A仿真器功能远不止信号转换。C不准确。D不全面。"
   },
   {
     "id": 226,
@@ -2755,7 +2754,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "GDB(GNU Debugger)是开源的命令行调试器，配合OpenOCD等工具可以实现对嵌入式目标板的调试。"
+    "explanation": "选A。GDB(GNU Debugger)是开源免费的调试器，配合OpenOCD/pyOCD可实现命令行调试ARM目标板。B Keil Debugger是商业的。C J-Link Debugger需要硬件+软件。D STM32CubeMonitor是可视化监测工具。"
   },
   {
     "id": 227,
@@ -2768,7 +2767,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "硬件断点通过硬件比较器实现，不修改代码；软件断点在指定地址替换为BKPT指令，触发调试异常后暂停CPU。"
+    "explanation": "选B。软件断点在指定地址将原指令替换为BKPT指令，CPU执行到此处触发调试异常暂停。A硬件断点用比较器不修改代码。C/D不准确。"
   },
   {
     "id": 228,
@@ -2781,7 +2780,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "逻辑分析仪是非侵入式调试工具，抓取外部信号时序而不干扰CPU运行，对系统实时性影响最小。"
+    "explanation": "选D。逻辑分析仪是非侵入式的——被动抓取外部信号，完全不影响CPU运行。A打印调试增加代码执行时间。B断点调试暂停CPU。C单步调试也暂停CPU。"
   },
   {
     "id": 229,
@@ -2794,7 +2793,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"AVRIsp\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。AVRIsp是AVR单片机的烧录工具——不是STM32的。A ST-Link是ST官方工具。B J-Link是Segger工具。C OpenOCD是开源调试工具。"
   },
   {
     "id": 230,
@@ -2807,7 +2806,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"只能用官方IDE\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。J-Link不只能用于官方IDE——它支持Keil、IAR、Eclipse等多种第三方IDE和GDB Server。A/B/D为J-Link的正确特点。"
   },
   {
     "id": 231,
@@ -2820,7 +2819,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "ST-Link是通过USB连接到目标板的调试/烧录工具，使用SWD/JTAG协议，不支持WiFi无线调试。"
+    "explanation": "选D。ST-Link通过USB连接，使用SWD/JTAG协议，不支持WiFi无线调试。A/B/C均为ST-Link支持的功能。"
   },
   {
     "id": 232,
@@ -2833,7 +2832,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"IAP允许应用程序自身更新固件\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选C。IAP(In-Application Programming)允许应用程序在运行时更新自身固件。ISP需进入Boot模式通过串口烧录。A/B描述不准确。D两者用途不同。"
   },
   {
     "id": 233,
@@ -2846,7 +2845,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "通过JTAG/SWD烧录程序时，目标板只需正常上电，调试器会通过复位引脚或复位请求来控制芯片。"
+    "explanation": "选B。JTAG/SWD烧录时目标板只需正常上电——调试器通过复位请求或复位引脚控制芯片进入调试状态。A需要Boot0拉高是ISP烧录。C/D不准确。"
   },
   {
     "id": 234,
@@ -2859,7 +2858,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"Bootloader是系统加电后运行的第一段用户程序\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。Bootloader是系统上电后运行的第一段用户程序(不是OS内核)，负责初始化硬件并引导OS/应用程序。A不一定是OS内核的一部分。C/D不准确。"
   },
   {
     "id": 235,
@@ -2872,7 +2871,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103每组GPIO端口有16个引脚(P0~P15)，与16条EXTI线的映射关系相对应。"
+    "explanation": "选C。STM32F103每组GPIO端口含16个引脚(P0~P15)。A 8个不对。B 12个不对。D 32个不对。"
   },
   {
     "id": 236,
@@ -2885,7 +2884,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103最多有7组GPIO端口：GPIOA~GPIOG。具体可用组数取决于封装引脚数。"
+    "explanation": "选B。STM32F103共有7组GPIO端口(GPIOA~GPIOG)。具体可用组数取决于封装。A 5组不完全(仅限部分封装)。C 9组超出实际。D 11组超出。"
   },
   {
     "id": 237,
@@ -2898,7 +2897,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "GPIOx_ODR(Output Data Register)是GPIO端口输出数据寄存器，存放引脚的输出电平数据。"
+    "explanation": "选B。GPIOx_ODR(Output Data Register)是GPIO输出数据寄存器。A IDR是输入数据寄存器。C CRL/CRH是配置寄存器。D BSRR是置位/复位寄存器。"
   },
   {
     "id": 238,
@@ -2911,7 +2910,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"差分输入\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。差分输入不是STM32F103 GPIO支持的模式。A推挽输出、B开漏输出、D模拟输入都是支持的模式。"
   },
   {
     "id": 239,
@@ -2924,7 +2923,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "推挽输出高电平时，PMOS导通接VDD，NMOS截止；输出低电平时，NMOS导通接GND，PMOS截止。"
+    "explanation": "选B。推挽输出高电平：PMOS导通(接VDD)、NMOS截止，输出强高电平。A PMOS截止无法输出高。C两者导通短路。D两者截止是高阻态。"
   },
   {
     "id": 240,
@@ -2937,7 +2936,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "开漏输出模式下只有NMOS管，输出高电平时NMOS截止，引脚呈高阻态，需要外部上拉电阻确定高电平。"
+    "explanation": "选B。开漏输出只有NMOS，输出高电平时NMOS截止→引脚高阻态，须外部上拉电阻才能得到确定高电平。A直接输出高不对(无PMOS)。C始终高阻不对(NMOS拉低时输出确定低)。D不准确。"
   },
   {
     "id": 241,
@@ -2950,7 +2949,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "上拉输入模式下，引脚内部通过上拉电阻接VDD。读取按键时，未按下=高电平，按下=低电平，适合按键对GND的电路。"
+    "explanation": "选C。上拉输入：空闲时内部上拉电阻接VDD→读高；按键按下接GND→读低。适合按键对GND的电路。A浮空输入悬空电平不确定。B下拉输入适合按键对VCC的电路。D模拟输入不能读数字。"
   },
   {
     "id": 242,
@@ -2963,7 +2962,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "复用功能输出模式下，GPIO引脚的控制权交给片上外设(USART/TIM/SPI等)，外设信号直接驱动输出。"
+    "explanation": "选B。复用输出模式下GPIO引脚控制权交给片上外设(USART/TIM/SPI等)，外设信号直接驱动输出。A GPIO自己输出是普通输出模式。C外部信号是输入。D不准确。"
   },
   {
     "id": 243,
@@ -2976,7 +2975,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "ADC采集模拟信号时，GPIO必须配置为模拟输入模式。此模式下施密特触发器关闭，减少数字噪声干扰。"
+    "explanation": "选D。ADC采集必须用模拟输入模式——此时施密特触发器关闭、数字电路断开，减少数字噪声干扰。A浮空输入引脚悬空电平不确定。B/C上拉/下拉会改变测量电压。"
   },
   {
     "id": 244,
@@ -2989,7 +2988,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "GPIOx_CRL配置低8位引脚(P0~P7)，GPIOx_CRH配置高8位引脚(P8~P15)。每个引脚占用4位(CNF2+ MODE2)。"
+    "explanation": "选A。CRL配置P0~P7(低8位)、CRH配置P8~P15(高8位)。每位引脚占4bit(CNF2+MODE2)。B说反了。C/D范围不对。"
   },
   {
     "id": 245,
@@ -3002,7 +3001,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "配置GPIO引脚为输出模式需要配置CNF(00=推挽/01=开漏)和MODE(决定输出速度)两个字段位。"
+    "explanation": "选C。配置GPIO输出需同时设置：CNF[1:0](决定输出类型：推挽/开漏/复用)和MODE[1:0](决定速度：2/10/50MHz)。A/B各自不完整。"
   },
   {
     "id": 246,
@@ -3015,7 +3014,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "GPIO MODE位：00=输入，01=输出10MHz，10=输出2MHz，11=输出50MHz。"
+    "explanation": "选D。GPIO MODE位编码：00=输入、01=10MHz、10=2MHz、11=50MHz。A 输入模式。B 10MHz。C 2MHz。"
   },
   {
     "id": 247,
@@ -3028,7 +3027,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "推挽输出CNF=00，50MHz MODE=11。PA0的配置为CNF[1:0]=00，MODE[1:0]=11。"
+    "explanation": "选A。推挽输出CNF=00、50MHz MODE=11→CNF[1:0]=00, MODE[1:0]=11。B CNF=01是开漏输出。C MODE=01是10MHz。D MODE=10是2MHz。"
   },
   {
     "id": 248,
@@ -3041,7 +3040,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "上拉输入CNF=10(输入+上拉/下拉)，输入MODE=00。PB5配置：CNF=10，MODE=00。"
+    "explanation": "选B。上拉输入CNF=10(带上下拉的输入)、输入MODE=00。A CNF=00、MODE=11是推挽输出。C CNF=01不是上拉输入。D CNF=11不是上拉输入。"
   },
   {
     "id": 249,
@@ -3054,7 +3053,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "输入模式下，当CNF=10(上拉/下拉)时，通过ODR寄存器选择：ODR=1上拉，ODR=0下拉。"
+    "explanation": "选C。输入模式下CNF=10时：GPIOx_ODR对应位=1使能上拉、=0使能下拉。A CRL/CRH控制模式和速度。B IDR只读不能设上下拉。D BSRR是输出置位/复位。"
   },
   {
     "id": 250,
@@ -3067,7 +3066,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "BSRR(Bit Set/Reset Register)可以同时设置和清除ODR位，高16位对应复位，低16位对应置位，实现原子操作。"
+    "explanation": "选A。BSRR 32位：低16位写1→ODR对应位置1；高16位写1→ODR对应位清0。一次写入可同时置位和复位不同引脚。B BRR只能复位。C IDR只能读。D ODR不是原子操作。"
   },
   {
     "id": 251,
@@ -3080,7 +3079,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "BSRR低16位写1置位对应ODR位。GPIOA->BSRR = 1<<3 将PA3置高，写0的位不影响，安全高效。"
+    "explanation": "选B。BSRR低16位写1置位ODR对应位，写0不影响→GPIOA->BSRR=(1<<3)仅对PA3置高，原子操作。A直接操作ODR可能产生读-改-写竞争。C BRR只能复位。D 需关中断太复杂。"
   },
   {
     "id": 252,
@@ -3093,7 +3092,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "BRR(Bit Reset Register)专门用于清除引脚。GPIOA->BRR = 1<<3 将PA3置低，写0的位不受影响。"
+    "explanation": "选A。BRR写1清除对应ODR位→GPIOA->BRR=(1<<3)仅对PA3置低，其他位不变。B BSRR高16位也可复位但通常用BRR。C ODR写0清除原子性差。D BRR写0无效。"
   },
   {
     "id": 253,
@@ -3106,7 +3105,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "GPIOx_IDR(Input Data Register)是只读寄存器，反映引脚实际电平状态，用于读取输入。"
+    "explanation": "选B。GPIOx_IDR(Input Data Register)是只读寄存器，反映引脚当前实际电平。A ODR存输出数据不能反映实际输入。C CRL是配置寄存器。D BSRR是输出操作寄存器。"
   },
   {
     "id": 254,
@@ -3119,7 +3118,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "GPIOx_LCKR(锁定寄存器)用于锁定端口配置。锁定后CRL/CRH寄存器无法修改，直到MCU复位。"
+    "explanation": "选A。LCKR(Lock Register)锁定后CRL/CRH不能修改→防止意外修改引脚配置，需复位才能解锁。B不能阻止输出值修改(ODR/BSRR不受限)。C/D不准确。"
   },
   {
     "id": 255,
@@ -3132,7 +3131,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "机械按键在按下和释放瞬间，金属触点会弹跳产生多个脉冲(抖动)，导致电平信号不稳定。"
+    "explanation": "选C。机械按键有弹跳现象→按下/释放瞬间产生5~20ms的电平抖动脉冲，导致多次触发。A噪声干扰是次要因素。B接触不良不是正常按键特性。D电压不稳与此无关。"
   },
   {
     "id": 256,
@@ -3145,7 +3144,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "RC滤波电路是常用的硬件消抖方法，利用电容的充放电特性滤除按键抖动的高频脉冲。"
+    "explanation": "选B。RC低通滤波是常用硬件消抖方案，利用电容充放电滤除高频抖动脉冲。A施密特触发器用于波形整形不是消抖。C二极管不能消抖。D光耦用于隔离不是消抖。"
   },
   {
     "id": 257,
@@ -3158,7 +3157,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "软件消抖最常见的方法是延时10~20ms(避开抖动期)后再次检测按键状态，两次一致才确认有效。"
+    "explanation": "选A。软件消抖：延时10~20ms(超过抖动期)后再次读取，两次一致才确认为有效按键。B延时1ms太短不足以消抖。C延时1秒太长用户体验差。D不延时无法消抖。"
   },
   {
     "id": 258,
@@ -3171,7 +3170,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "浮空输入模式下引脚高阻，悬空时电平由外界电磁场决定，不确定，容易受干扰，需加上拉/下拉电阻。"
+    "explanation": "选C。浮空输入引脚高阻态，悬空时电平由外界电磁场随机决定，极易受干扰→需加上拉/下拉电阻确定空闲电平。A恒为高(B错误)。D内部有弱上拉是上拉输入模式。"
   },
   {
     "id": 259,
@@ -3184,7 +3183,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "检测上升沿应使用下拉输入或浮空输入+外部上拉，保证空闲时为确定电平，上升沿到来时能被正确检测。"
+    "explanation": "选B。检测上升沿需空闲为低→用下拉电阻或外接下拉+浮空输入。但题目选项中上拉输入或浮空输入均可配合外部电路检测上升沿(浮空时注意初始电平)。A纯下拉看不到上升沿。C推挽输出不能作输入。D模拟输入不能检边沿。"
   },
   {
     "id": 260,
@@ -3197,7 +3196,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "按键一端接GND，按下为低电平，空闲时需上拉电阻拉高。GPIO配置为上拉输入，空闲时读高，按下读低。"
+    "explanation": "选B。按键对GND：按下=低电平，空闲需上拉→上拉输入模式空闲读高、按下读低。A下拉输入空闲低按下更低无法区分。C浮空输入空闲电平不确定。D推挽不能读输入。"
   },
   {
     "id": 261,
@@ -3210,7 +3209,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "按键一端接VCC，按下为高电平，空闲时需下拉电阻拉低。GPIO配置为下拉输入，空闲时读低，按下读高。"
+    "explanation": "选C。按键对VCC：按下=高电平，空闲需下拉→下拉输入模式空闲读低、按下读高。A浮空电平不确定。B上拉输入空闲高按下也高无法区分。D不正确。"
   },
   {
     "id": 262,
@@ -3223,7 +3222,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "增加输入滤波时间可以滤除短暂的干扰脉冲(数字滤波)，GPU和外部RC滤波都能有效减弱干扰。"
+    "explanation": "选A。增加输入滤波时间(数字滤波/施密特触发迟滞/外部RC)可以有效滤除短暂干扰脉冲。B增大上拉电阻会减慢上升沿。C减小滤波反而更敏感。D去掉滤波干扰更大。"
   },
   {
     "id": 263,
@@ -3236,7 +3235,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "状态机消抖是软件消抖的进阶方法，通过状态转移确定按键的稳定状态，能准确识别短按、长按等操作。"
+    "explanation": "选B。状态机消抖通过多个稳定状态判定按键的确切状态，可同时识别短按/长按/连击。A单次延时消抖不支持长按识别。C/D不如状态机可靠和灵活。"
   },
   {
     "id": 264,
@@ -3249,7 +3248,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32 GPIO TTL电平标准：低电平<0.8V，高电平>2.0V(VDD=3.3V时)。2.0V为高电平最低识别电压。"
+    "explanation": "选C。STM32 TTL电平(3.3V供电)：VIL<0.8V、VIH>2.0V→2.0V为高电平最低识别电压。A 0.8V是低电平最高。B 1.5V在不确定区。D 3.3V是VDD。"
   },
   {
     "id": 265,
@@ -3262,7 +3261,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103单个GPIO引脚推挽输出时的最大灌电流(吸入)为25mA，超过可能损坏引脚。"
+    "explanation": "选C。STM32F103单个IO引脚最大灌电流25mA(推挽低电平吸入)。A 5mA太小。B 10mA不够。D 50mA超出会导致引脚损坏。"
   },
   {
     "id": 266,
@@ -3275,7 +3274,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103一个GPIO端口所有16个引脚的总电流不能超过150mA，设计时需核算所有引脚电流之和。"
+    "explanation": "选C。STM32一个GPIO端口所有引脚总电流之和不能超过150mA。A 25mA是单个引脚限制。B 50mA不对。D 500mA远超芯片能力。"
   },
   {
     "id": 267,
@@ -3288,7 +3287,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "LED通常采用灌电流(吸入)驱动方式：GPIO输出低电平时LED亮，高电平时灭。这种驱动能力更强。"
+    "explanation": "选B。灌电流驱动(GPIO低电平LED亮)：NMOS导通能力强、LED正极接VDD→常用且安全。A拉电流驱动能力弱不建议。C高电平驱动LED灭。D直接不串联电阻会烧LED。"
   },
   {
     "id": 268,
@@ -3301,7 +3300,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "50MHz输出模式适用于需要高速信号切换的场景，如SPI(可达18MHz以上)和FSMC并行接口。"
+    "explanation": "选C。50MHz模式适合需要高速信号切换的场景→SPI(可达18MHz+)、FSMC并行总线。A普通LED不需要高速。B按键读取不需要。D低速外设不需要。"
   },
   {
     "id": 269,
@@ -3314,7 +3313,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "I2C的SDA和SCL需要开漏输出+外部上拉来实现线与逻辑和多主仲裁，必须配置为复用开漏输出模式。"
+    "explanation": "选B。I2C需要线与逻辑——多设备共享总线，必须用开漏输出+外接上拉→配置为复用开漏输出。A推挽输出无法线与(多个推挽输出驱动同一线会短路)。C上拉输入不能输出。D模拟输入不能用于数字通信。"
   },
   {
     "id": 270,
@@ -3327,7 +3326,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "同上。I2C协议的线与逻辑特性要求SDA和SCL都使用开漏输出+外部上拉电阻。"
+    "explanation": "选B。同269题——I2C的SDA和SCL都必须配置为复用开漏输出。A推挽、C上拉输入、D模拟输入均不适用。"
   },
   {
     "id": 271,
@@ -3340,7 +3339,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"速度越高，功耗越高\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。GPIO输出速度越高→充放电越快→动态功耗越大(P=CV²f)。A速度与功耗无关不对。C/D不准确。"
   },
   {
     "id": 272,
@@ -3353,7 +3352,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32 GPIO最大灌电流25mA，直接驱动20mA LED勉强但不可靠，最佳做法是加三极管或MOSFET来驱动。"
+    "explanation": "选B。STM32 IO最大灌电流25mA，20mA已接近极限→最佳做法用三极管或MOSFET扩流驱动。A直接驱动有风险。C/D不推荐。"
   },
   {
     "id": 273,
@@ -3366,7 +3365,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "开漏输出无外部上拉时，NMOS截止后引脚呈高阻态，电压不确定，必须外接上拉电阻才能输出确定的高电平。"
+    "explanation": "选C。开漏无上拉时NMOS截止=高阻态，引脚电压由外部决定(浮空→不确定)。A 0V只在NMOS导通时。B VDD只在有上拉时。D不准确。"
   },
   {
     "id": 274,
@@ -3379,7 +3378,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "复用推挽输出用于片上外设(如USART TX、SPI MOSI等)需要较强驱动能力的场景，输出信号来源于外设。"
+    "explanation": "选B。复用推挽输出将引脚交给片上外设且用推挽驱动→适合需要较强驱动能力的外设(USART TX、SPI MOSI等)。A开漏复用用于I2C。C输入模式不能输出。D模拟模式不能数字输出。"
   },
   {
     "id": 275,
@@ -3392,7 +3391,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "I2C SDA(数据线)必须使用复用开漏输出，因为I2C协议要求多设备之间实现线与逻辑和仲裁。"
+    "explanation": "选C。I2C SDA需要开漏输出+外部上拉实现线与多主仲裁→必须配置为复用开漏输出。A USART TX用推挽。B SPI SCK用推挽。D GPIO LED用推挽。"
   },
   {
     "id": 276,
@@ -3405,7 +3404,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"高电平触发\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。STM32 EXTI支持的触发方式：上升沿、下降沿、双边沿——不支持高电平触发(电平触发是某些MCU的方式)。A/B/C均支持。"
   },
   {
     "id": 277,
@@ -3418,7 +3417,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "EXTI线0只能映射到一个端口(PA0/PB0/PC0...选其一)。PA0和PB0同时启用EXTI0会产生冲突，硬件不支持。"
+    "explanation": "选C。同一EXTI线(如EXTI0)只能映射到一个GPIO端口——PA0和PB0不能同时使用EXTI0，需通过SYSCFG选择。A两者同时触发不对。B都不触发不对。D多条EXTI线不对(EXTI0只有一条)。"
   },
   {
     "id": 278,
@@ -3431,7 +3430,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "Cortex-M3的位带操作将别名区32位字映射到位带区1位，实现原子级位读/写，用于安全操作外设寄存器。"
+    "explanation": "选A。Cortex-M3位带操作将别名区32位字映射到位带区1位→单指令原子完成位读/写,比读-改-写安全。B不支持写不对。C需要关中断不对(硬件原子性)。D仅内核用不对(外设区也可位带)。"
   },
   {
     "id": 279,
@@ -3444,7 +3443,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "STM32F103 GPIOA的基地址为0x40010800(挂在APB2总线上的外设)。"
+    "explanation": "选A。STM32F103 GPIOA基址=0x40010800(APB2外设：0x40010000+偏移)。B 0x40010C00=GPIOB。C 0x40011000=GPIOC。D 0x40011400=GPIOD。"
   },
   {
     "id": 280,
@@ -3457,7 +3456,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "同一组GPIO的不同引脚可以各自独立配置为不同的速度和模式(MODE字段每个引脚单独设置)，互不影响。"
+    "explanation": "选D。同一组GPIO的每个引脚可独立配置不同速度和模式(每个引脚有独立的4位CNF+MODE)。A正确：先配置再输出。B正确：需使能时钟。C正确：输入模式不需要配置速度。"
   },
   {
     "id": 281,
@@ -3470,7 +3469,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103 NVIC支持最多60个可屏蔽中断通道(IRQ0~IRQ59)。"
+    "explanation": "选C。STM32F103 NVIC支持最多60个可屏蔽中断通道+16个系统异常=共76个中断向量。A 16个只算系统异常。B 32不够。D 84超出。"
   },
   {
     "id": 282,
@@ -3483,7 +3482,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32使用4位优先级，最多支持16级抢占优先级(0~15)，实际可用级数取决于优先级分组配置。"
+    "explanation": "选C。STM32使用4位优先级→最多16级(0~15)抢占优先级。A 4级(2位)不够。B 8级(3位)不够。D 32级超出(需5位)。"
   },
   {
     "id": 283,
@@ -3496,7 +3495,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "\"分组一旦设置，整个系统所有中断必须使用相同的分组\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选A。NVIC优先级分组一旦在程序中设置(通常初始化时)，整个系统所有中断共用同一分组配置。B不能每个外设独立分组。C/D不准确。"
   },
   {
     "id": 284,
@@ -3509,7 +3508,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "两个中断同时发生且抢占优先级不同时，NVIC优先响应抢占优先级较高的中断(数值小的优先)。"
+    "explanation": "选B。两个中断同时发生时，抢占优先级高的(数值小的)先被响应。A子优先级只裁决同时挂起的同抢占级中断。C/D不准确。"
   },
   {
     "id": 285,
@@ -3522,7 +3521,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "Cortex-M3中复位异常(Reset)的优先级为-3，是所有异常/中断中优先级最高的。"
+    "explanation": "选D。Cortex-M3异常优先级数值：Reset=-3(最高)、NMI=-2、HardFault=-1、其他>=0。A SysTick优先级可编程(默认较低)。B PendSV默认最低。C SVCall优先级可编程。"
   },
   {
     "id": 286,
@@ -3535,7 +3534,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"向量表可以重定位到 SRAM 或 Flash 的其他地址\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。向量表可重定位到SRAM起始(0x20000000)或Flash其他地址——通过VTOR寄存器设置。A向量表可修改内容(C中可改ISR地址)。C大小固定。D可重定位。"
   },
   {
     "id": 287,
@@ -3548,7 +3547,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "中断挂起状态寄存器可用于软件触发中断(写1挂起)和查询中断是否处于挂起状态(读取)。"
+    "explanation": "选C。ISPR(中断挂起寄存器)写1可软件触发中断/查询中断是否挂起。A ISER使能中断。B ICER禁能中断。D IABR只读反映活跃状态。"
   },
   {
     "id": 288,
@@ -3561,7 +3560,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103 EXTI支持16条外部中断线(EXTI0~15)，每条可以映射到相应编号的GPIO引脚。"
+    "explanation": "选C。EXTI支持16条外部中断线(EXTI0~15)用于GPIO输入。A 8条不够(STM32有EXTI0~15)。B 12条也不对。D 20条超出(那是总中断线数含PVD/RTC等)。"
   },
   {
     "id": 289,
@@ -3574,7 +3573,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "同一条EXTI线(如EXTI0)只能映射到一个GPIO端口。PA0和PB0共用EXTI0会导致硬件冲突，需通过SYSCFG寄存器选择。"
+    "explanation": "选D。一条EXTI线同时只能映射一个GPIO端口——比如EXTI0只能选PA0或PB0或PC0中的一个。A/B/C说法不准确。"
   },
   {
     "id": 290,
@@ -3587,7 +3586,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "按键按下时IO从高变低，是下降沿。配置为下降沿触发，可在按键按下瞬间产生中断。"
+    "explanation": "选B。按下=高→低→下降沿触发在按下瞬间产生中断。A上升沿在松开时触发。C双边沿按下和松开都触发。D高电平触发不支持。"
   },
   {
     "id": 291,
@@ -3600,7 +3599,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "机械按键存在弹跳现象(bouncing)，按下和释放瞬间会产生多个脉冲(持续约5-20ms)，需要消抖处理。"
+    "explanation": "选A。按键机械触点弹跳→按下/释放时产生多个脉冲(持续约5~20ms)→需要消抖。B接触不良非主因。C/D不是根本原因。"
   },
   {
     "id": 292,
@@ -3613,7 +3612,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "按键对GND连接时，空闲需要上拉保持高电平。GPIO配置为上拉输入不需要外部上拉电阻。"
+    "explanation": "选B。按键对GND→空闲需上拉保持高电平，按下变低→上拉输入最适。A浮空输入空闲电平不确定。C下拉输入空闲低按下也低无法区分。D模拟输入不能用于数字按键。"
   },
   {
     "id": 293,
@@ -3626,7 +3625,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "STM32 GPIO内部集成可配置的上拉/下拉电阻。在没有外部电阻时，可以使能内部上拉/下拉来保证确定电平。"
+    "explanation": "选D。STM32 GPIO内部集成可编程上拉/下拉电阻→无外部电阻时使能内部上下拉即可。A外部电阻可以不用。B浮空不可靠。C只下拉不完全(有些按键需上拉)。"
   },
   {
     "id": 294,
@@ -3639,7 +3638,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "按键电路中串联100Ω~1kΩ电阻主要用于限流保护，防止GPIO意外配置为输出时短路损坏引脚。"
+    "explanation": "选B。100Ω~1kΩ串联电阻≈限流保护：防止GPIO误配置为输出时对地/VDD短路损坏引脚。A增大电流是串联电阻的反效果。C/D不准确。"
   },
   {
     "id": 295,
@@ -3652,7 +3651,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "上拉电阻使IO口在按键未按下时保持确定的高电平，防止浮空状态误触发。"
+    "explanation": "选B。上拉电阻使IO在按键未按下时保持确定的高电平，防止浮空误判。A下拉电阻不能保持高。C限流是串联电阻的作用。D不准确。"
   },
   {
     "id": 296,
@@ -3665,7 +3664,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "中断中不适合长时间延时消抖，最合理的做法是：中断记录触发时间和标志，主循环或定时器中断中延时后检测消抖。"
+    "explanation": "选B。中断中不能长时间延时→合理做法：ISR仅记录触发时间/标志→主循环或定时中断中延时检测消抖。A在ISR中延时10ms阻塞系统。C/D不理想。"
   },
   {
     "id": 297,
@@ -3678,7 +3677,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "中断和主循环共享的变量必须用volatile修饰或使用临界区保护，防止编译器优化导致主循环看不到ISR中的改动。"
+    "explanation": "选B。编译器优化可能将变量放入寄存器→ISR和主循环共享变量必须volatile修饰，否则主循环看不到ISR的修改。A直接读写无问题不对(有优化问题)。C/D不完全正确。"
   },
   {
     "id": 298,
@@ -3691,7 +3690,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "USART(U加S)比UART多了Synchronous(同步)模式支持，可提供时钟信号实现同步通信。UART仅支持异步。"
+    "explanation": "选B。USART比UART多了\"Synchronous\"(同步)功能→可提供时钟线实现同步通信。A/D说法混淆了两者。C不准确。"
   },
   {
     "id": 299,
@@ -3704,7 +3703,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "异步串行通信的数据帧以起始位(低电平，持续1位时间)开始，接收方据此同步时钟。"
+    "explanation": "选B。异步串口用低电平(1位时间)作为起始位→接收器检测下降沿开始接收。A高电平是空闲态。C不定。D差分是RS-485特性。"
   },
   {
     "id": 300,
@@ -3717,7 +3716,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "LSB First表示先发送数据的最低有效位(bit0)，这是UART的默认发送顺序。"
+    "explanation": "选B。LSB First=先发送最低位(bit0)→串口默认发送顺序。A MSB First相反。C不准确。D不准确。"
   },
   {
     "id": 301,
@@ -3730,7 +3729,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "USART1是高速外设，挂在APB2总线上(最高72MHz)。USART2/USART3挂在APB1(最高36MHz)。"
+    "explanation": "选C。USART1是高速外设挂在APB2总线(最高72MHz)。A APB1上挂USART2/USART3(最高36MHz)。B AHB上挂GPIO等。D不对。"
   },
   {
     "id": 302,
@@ -3743,7 +3742,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "空闲帧(Break后的全1帧)用于检测接收线路空闲状态。"
+    "explanation": "选B。串口空闲帧=线路空闲(连续高电平/全1)。A全0是Break帧。C/D不准确。"
   },
   {
     "id": 303,
@@ -3756,7 +3755,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "\"0.5位\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选A。UART停止位可配置为1、1.5、2位——不支持0.5位。B/C/D均支持。"
   },
   {
     "id": 304,
@@ -3769,7 +3768,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "最常见无校验串口帧格式：1起始位+8数据位+1停止位，共10位。波特率÷10=理论最大字节传输速率。"
+    "explanation": "选A。最常见无校验帧格式：1起始+8数据+1停止=10位。B多了校验位。C 7位数据不常见。D 2停止位不是最常见。"
   },
   {
     "id": 305,
@@ -3782,7 +3781,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "串口TX引脚空闲时为高电平(逻辑1)。起始位为低电平，标志着帧的开始。"
+    "explanation": "选B。串口TX空闲=高电平(逻辑1→VDD)，起始位=低电平打破空闲→接收器开始同步。A低电平是起始位。C/D不准确。"
   },
   {
     "id": 306,
@@ -3795,7 +3794,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103内置ADC分辨率为12位，转换数字量结果范围0~4095(2^12-1)。"
+    "explanation": "选B。STM32F103 ADC分辨率=12位→满量程输出4095。A 8位不对。C 10位不对(F0系列有12位)。D 16位超出(F4也有12位)。"
   },
   {
     "id": 307,
@@ -3808,7 +3807,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103系列最多有3个独立ADC模块(ADC1/ADC2/ADC3)，具体数量取决于型号。"
+    "explanation": "选C。STM32F103最多3个ADC(ADC1/2/3)。A 1个不对。B 2个只有部分封装。D 4个超出。"
   },
   {
     "id": 308,
@@ -3821,7 +3820,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ADC参考电压通常由VREF+引脚提供(2.4V~VDDA)，决定ADC满量程电压和转换精度。"
+    "explanation": "选C。ADC参考电压VREF+可外部输入(2.4V~VDDA)，决定满量程范围。A VCC=VDDA通常3.3V。B VREF-通常接地。D 内部1.2V是VREFINT仅供校准。"
   },
   {
     "id": 309,
@@ -3834,7 +3833,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "12位ADC的数字量输出范围为0~4095(2^12=4096个值，从0开始)。0对应0V，4095对应VREF+。"
+    "explanation": "选D。12位ADC输出范围0~4095(2^12=4096个值从0开始)。A 0~255是8位。B 0~1023是10位。C 0~65535是16位。"
   },
   {
     "id": 310,
@@ -3847,7 +3846,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ADC输入电压等于VREF+时，12位转换结果为4095(满量程)。转换公式：Digital = Vin/VREF+ × 4095。"
+    "explanation": "选C。Vin=VREF+→Digital=2^12-1=4095(满量程)。A 0是Vin=0。B 2048是Vin=VREF+/2。D 超过量程异常值。"
   },
   {
     "id": 311,
@@ -3860,7 +3859,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "正确答案为 A：逐次逼近型（SAR）。"
+    "explanation": "选A。STM32F103 ADC架构=SAR(逐次逼近寄存器型)→在速度与精度间最佳平衡。B Σ-Δ用于高精度低速。C Flash型速度快但分辨率低。D 双积分型精度高但极慢。"
   },
   {
     "id": 312,
@@ -3873,7 +3872,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "STM32F103 ADC在ADCCLK=14MHz时最快采样速率为1Msps(每秒百万次采样)，约1μs完成一次转换。"
+    "explanation": "选C。STM32F103 ADC最高1Msps(ADCCLK=14MHz，采样1.5+12.5周期=1μs)。A 0.5Msps太低。B 0.8Msps不准确。D 2Msps超出F103能力。"
   },
   {
     "id": 313,
@@ -3886,7 +3885,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "ADC转换完成后，数字量结果存储在ADC_DR(ADC数据寄存器)中，CPU或DMA从此寄存器读取结果。"
+    "explanation": "选C。ADC转换结果存入ADC_DR(Data Register)→CPU或DMA从此读取。A CR是控制寄存器。B SR是状态寄存器。D SMPR是采样时间寄存器。"
   },
   {
     "id": 315,
@@ -3899,7 +3898,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103内部温度传感器连接到ADC1的通道16(ADC_IN16)。温度计算公式见数据手册。"
+    "explanation": "选B。内部温度传感器连ADC1_IN16(通道16)。A通道17是VREFINT。C通道0是PA0。D不对。"
   },
   {
     "id": 316,
@@ -3912,7 +3911,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "内部参考电压VREFINT(约1.2V)连接到ADC1的通道17(ADC_IN17)，可用于校准ADC或反推VDDA电压。"
+    "explanation": "选B。VREFINT(~1.2V)连ADC1_IN17(通道17)→用于校准或反算VDDA。A通道16是温度传感器。C/D不准确。"
   },
   {
     "id": 317,
@@ -3925,7 +3924,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ADC通道0(ADC_IN0)映射到GPIO PA0引脚，每个ADC通道对应特定的GPIO引脚。"
+    "explanation": "选A。ADC通道0→GPIO PA0引脚。B PA1是通道1。C PA2是通道2。D PA3是通道3。"
   },
   {
     "id": 318,
@@ -3938,7 +3937,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "ADC输入引脚必须是模拟输入模式，此模式下施密特触发器关闭、数字电路断开，减少对模拟信号的数字干扰。"
+    "explanation": "选D。ADC采样需模拟输入模式→关闭施密特触发器、断开数字电路，避免数字噪声干扰。A浮空输入悬空电平不定。B上拉改变输入电压。C下拉也改变电压。"
   },
   {
     "id": 319,
@@ -3951,7 +3950,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103最多支持4个注入通道(Injected Channels)，注入通道可打断常规通道的转换。"
+    "explanation": "选B。STM32F103最多4个注入通道(Injected Channels)。A 2个不够。C 8个超出。D 16个超出。"
   },
   {
     "id": 320,
@@ -3964,7 +3963,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "连续转换模式下，ADC完成一次转换后自动开始下一次转换(同一通道)，无需软件再次启动。"
+    "explanation": "选B。连续转换模式→完成一次自动开始下一次(同一通道)，直到软件停止。A单次转换才停。C扫描模式才切换多通道。D注入触发才转换注入通道。"
   },
   {
     "id": 321,
@@ -3977,7 +3976,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "扫描模式用于自动依次转换多个常规通道，ADC按通道编号顺序逐个采样转换，适用于多通道数据采集。"
+    "explanation": "选B。扫描模式→依次转换多个通道(按通道号顺序)。A单一通道持续转换是连续模式。C/D不准确。"
   },
   {
     "id": 322,
@@ -3990,7 +3989,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "间断模式(DiscMode)将扫描组分成多个子组，每个子组转换n个通道后暂停，等待触发再继续下一子组。"
+    "explanation": "选A。间断模式(DiscMode)→一组转换n个通道后自动暂停，等待触发再续。B连续不暂停。C扫描不暂停。D单次只转一次。"
   },
   {
     "id": 323,
@@ -4003,7 +4002,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "注入组优先级更高，可打断正在进行的常规组转换。注入通道转换完成后，常规组从断点继续。"
+    "explanation": "选A。注入通道优先级高于常规通道→注入触发到来可打断常规转换，完成后常规从断点继续。B注入优先级更高。C两者共用ADC。D注入不可由软件触发(也可软件触发)。"
   },
   {
     "id": 324,
@@ -4016,7 +4015,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "STM32F103 ADC最小采样周期为1.5个ADC时钟周期。采样周期越短，转换越快但精度可能降低。"
+    "explanation": "选A。ADC最小采样周期=1.5个ADC时钟周期→速度快但精度可能降低。B 7.5周期更精确。C 13.5周期。D 28.5周期最精确。"
   },
   {
     "id": 325,
@@ -4029,7 +4028,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "采样周期越长，采样电容充电越充分，转换精度越高。这是速度与精度的权衡。"
+    "explanation": "选B。采样周期越长→采样电容充电越充分→转换结果越接近真实值(精度高)。A精度越低错误。C无关错误。D取决于电路不对。"
   },
   {
     "id": 326,
@@ -4042,7 +4041,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "上电后应首先执行ADC校准(调用HAL_ADCEx_Calibration_Start)，校准可消除内部电容不匹配引起的误差。"
+    "explanation": "选B。上电后先执行ADC校准→消除内部电容失配误差，提高精度。A直接测量无校准有误差。C/D校准后再测量才是正确流程。"
   },
   {
     "id": 328,
@@ -4055,7 +4054,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "12位ADC分辨率4096。VREF+=3.3V，Vin=1.65V，期望值=1.65/3.3×4095=2047.5≈2048。"
+    "explanation": "选B。12位ADC满量程4095→Vin=1.65V=3.3V/2→期望=4095×0.5≈2047→最接近2048。A 1024=4095/4。C 3072=4095×3/4。D 4095满量程。"
   },
   {
     "id": 329,
@@ -4068,7 +4067,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "失调误差(Offset Error)是输入为0V时ADC转换结果不为0的偏移量，相当于零点漂移。"
+    "explanation": "选A。失调误差(Offset Error)=输入0V时输出不为0→零点偏移。B增益误差是斜率偏差。C线性误差是非线性度。D量化误差是分辨率限制。"
   },
   {
     "id": 330,
@@ -4081,7 +4080,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "注入通道(Injected)优先级高于常规通道。当注入触发到来时，当前常规转换被暂停，先执行注入转换。"
+    "explanation": "选B。注入通道可以打断正在进行的常规组转换→优先转换注入通道，完成后恢复常规通道。A不能打断不对。C注入通道不是用来校准的。D注入通道数量有限。"
   },
   {
     "id": 331,
@@ -4094,7 +4093,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ADC过采样通过多次采样取平均，可提高有效分辨率(ENOB)。每4倍过采样提高1位有效分辨率。"
+    "explanation": "选A。过采样(Oversampling)+平均→提高有效分辨率(ENOB)。每4倍过采样≈额外1位。B提高速度相反(降低速度)。C/D不准确。"
   },
   {
     "id": 332,
@@ -4107,7 +4106,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "ADC模拟看门狗持续监控输入电压，当电压超出设定的高/低阈值时产生中断，用于电压异常报警。"
+    "explanation": "选A。ADC模拟看门狗→监控输入电压是否超出设定的高/低阈值，超限产生中断。B只检测一个阈值不完整。C/D不准确。"
   },
   {
     "id": 333,
@@ -4120,7 +4119,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "STM32F103 ADC时钟由PCLK2(APB2时钟)经分频后提供。ADC时钟不能超过14MHz。"
+    "explanation": "选B。ADC时钟=PCLK2(APB2时钟)经分频器分频→ADCCLK≤14MHz。A直接PCLK2不经过分频不对。C LSE/HSI是RTC时钟源。D不正确。"
   },
   {
     "id": 334,
@@ -4133,7 +4132,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"8个\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选C。STM32F103共有8个定时器：TIM1~TIM8(不含SysTick和IWDG/WWDG)。A 4个不够。B 6个不够。D 10个超出。"
   },
   {
     "id": 335,
@@ -4146,7 +4145,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "正确答案为 D：TIM1。"
+    "explanation": "选D。TIM1和TIM8是高级控制定时器→带互补PWM+死区+刹车。A TIM2是通用定时器。B TIM3是通用。C TIM4是通用。"
   },
   {
     "id": 336,
@@ -4159,7 +4158,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "TIM6和TIM7是基本定时器，功能最简单：只有计数和触发DAC功能，没有PWM输出和输入捕获功能。"
+    "explanation": "选C。基本定时器=TIM6和TIM7→只有计数和触发DAC功能，无PWM/捕获/编码器。A TIM1/TIM8是高级。B TIM2/TIM5是通用。D TIM3/TIM4是通用。"
   },
   {
     "id": 337,
@@ -4172,7 +4171,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "通用定时器(TIM2~5)计数器位宽为16位，计数范围0~65535。TIM2和TIM5的计数器可通过预分频扩展到32位。"
+    "explanation": "选B。通用定时器(TIM2~5)计数器=16位(0~65535)。注意TIM2/TIM5可级联32位。A 8位不对。C 24位是SysTick。D 32位不完全(只有TIM2/TIM5可级联)。"
   },
   {
     "id": 338,
@@ -4185,7 +4184,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"可以产生PWM波形\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选C。基本定时器(TIM6/TIM7)不能产生PWM——它们没有任何输出通道。A可产生更新中断。B可触发DAC。D挂在APB1上。"
   },
   {
     "id": 339,
@@ -4198,7 +4197,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "高级定时器(TIM1/TIM8)比通用定时器多了互补PWM输出和死区时间插入功能，专为电机控制和半桥/全桥驱动设计。"
+    "explanation": "选C。高级定时器(TIM1/TIM8)比通用多了：互补PWM输出+可编程死区+刹车功能。A编码器模式通用定时器也有。B输入捕获通用也有。D基本定时没有PWM。"
   },
   {
     "id": 340,
@@ -4211,7 +4210,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "TIM2~TIM5挂在APB1总线(最高36MHz，当APB1预分频>1时实际为72MHz)。TIM1/TIM8挂在APB2(72MHz)。"
+    "explanation": "选A。TIM2/3/4/5挂在APB1总线(最大36MHz，预分频>1时定时器时钟=72MHz)。B APB2上挂TIM1/TIM8。C AHB不直接挂定时器。D不对。"
   },
   {
     "id": 341,
@@ -4224,7 +4223,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"溢出标志寄存器\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。时基单元包括：计数器CNT、预分频器PSC、自动重装载ARR——不包括溢出标志寄存器(只是状态位)。A/B/C都是时基组成部分。"
   },
   {
     "id": 342,
@@ -4237,7 +4236,7 @@ const QUESTIONS = [
     },
     "answer": "D",
     "correct": true,
-    "explanation": "\"随机计数模式\" 是正确答案，该选项描述的内容不属于题目所问的范畴。"
+    "explanation": "选D。通用定时器支持：向上、向下、中央对齐(向上/向下)计数——不支持随机计数。A/B/C均为支持的计数模式。"
   },
   {
     "id": 343,
@@ -4250,7 +4249,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "定时器预分频器(PSC)为16位寄存器，取值范围0~65535。计数器时钟频率 = 定时器时钟/(PSC+1)。"
+    "explanation": "选B。PSC(预分频器)是16位寄存器，值0~65535→计数器时钟=定时器时钟/(PSC+1)。A 8位不对。C 24位是SysTick。D 32位不对。"
   },
   {
     "id": 344,
@@ -4263,7 +4262,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "溢出周期 = (PSC+1)×(ARR+1)/72MHz = 7200×10000/72M = 72000000/72000000 = 1秒。"
+    "explanation": "选B。溢出周期=(PSC+1)×(ARR+1)/72MHz=7200×10000/72M=72000000/72000000=1秒。A 0.1秒计算错误。C 10秒错误。D 0.01秒错误。"
   },
   {
     "id": 345,
@@ -4276,7 +4275,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "SysTick是Cortex-M内核内置的24位递减定时器，计数范围0~16777215，自动重装载。"
+    "explanation": "选C。SysTick是Cortex-M内核24位递减定时器→计数范围0~16777215。A 8位太小。B 16位不完整。D 32位不是(ARMv7-M SysTick是24位)。"
   },
   {
     "id": 346,
@@ -4289,7 +4288,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "高级定时器的互补PWM输出(带可编程死区)主要用于电机驱动、逆变器、半桥/全桥等功率控制场景。"
+    "explanation": "选B。互补PWM+死区主要用于电机驱动/逆变器/半桥全桥→上下管交替导通。A LED不需要互补。C USART不需要。D ADC不需要。"
   },
   {
     "id": 347,
@@ -4302,7 +4301,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "刹车(Break)功能在检测到外部故障信号(过流/过压)时，立即强制停止所有PWM输出(引脚进入安全状态)，保护电路。"
+    "explanation": "选A。刹车(Break)检测到故障(过流/过压)→立即强制停止所有PWM输出→引脚进入安全状态。B切换方向不对。C/D不是刹车功能。"
   },
   {
     "id": 348,
@@ -4315,7 +4314,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"死区时间用于避免互补PWM的上下管直通\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。死区时间=上管关断到下管导通之间的延时→防止上下管同时导通(直通短路)。A两个管同时导通是危险状态。C/D不准确。"
   },
   {
     "id": 349,
@@ -4328,7 +4327,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "输入捕获(Input Capture)模式捕获外部信号的边沿并记录定时器值，从而测量信号的周期、频率和脉冲宽度。"
+    "explanation": "选B。输入捕获→锁存边沿发生时的计数器值→通过两次捕获差值算周期/频率/脉宽。A输出PWM是输出比较/PWM模式。C/D不准确。"
   },
   {
     "id": 350,
@@ -4341,7 +4340,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "高级定时器(TIM1/TIM8)输出PWM前必须使能MOE(Main Output Enable)位(BTIMx_BDTR寄存器的MOE位)，否则输出被禁止。"
+    "explanation": "选A。高级定时器PWM输出前必须置位BDTR的MOE(Main Output Enable)位→否则所有PWM输出被强制禁止(安全机制)。B只开时钟不够。C/D不完整。"
   },
   {
     "id": 351,
@@ -4354,7 +4353,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "\"使用LSI或LSE作为时钟，在停止和待机模式下仍能工作\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选A。IWDG(独立看门狗)使用LSI(~40kHz)或LSE(32.768kHz)→独立于系统时钟→停止和待机模式仍运行。B停止模式不运行不对。C只能低功耗不对。D只监测不对(会复位)。"
   },
   {
     "id": 353,
@@ -4367,7 +4366,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "SysTick作为RTOS节拍或精确延时是非常便利的。它配置简单(24位向下计数)，Cortex-M所有芯片都有此外设。"
+    "explanation": "选B。SysTick主要用途：RTOS系统节拍(1ms/10ms)和HAL_Delay精确延时。A主要目的不是只延时(还可做OS节拍)。C调试不是主用途。D DMA不用SysTick。"
   },
   {
     "id": 354,
@@ -4380,7 +4379,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"使用定时器查询方式（等待更新标志）可以获得微秒级精度\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选C。定时器查询方式(while(!(TIM_SR&UIF))→等待更新标志位)可获得微秒级精度。A软件循环延时精度差。B HAL_Delay也依赖SysTick。D不准确。"
   },
   {
     "id": 355,
@@ -4393,7 +4392,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "μC/OS-III是抢占式实时多任务内核，支持同优先级任务的时间片轮转调度，μC/OS-II不支持同优先级多任务。"
+    "explanation": "选B。μC/OS-III是抢占式实时多任务内核→支持同优先级时间片轮转(μC/OS-II不支持同优先级)。A非抢占(协作式)不对。C分时OS不对(那是Linux等)。D批处理OS不对。"
   },
   {
     "id": 356,
@@ -4406,7 +4405,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"任务函数可以执行 return 语句正常返回\" 的说法存在错误，注意该表述与实际技术事实的差异。"
+    "explanation": "选B。μC/OS任务通常是无限循环→不能通过return正常返回否则系统异常。应用OSTaskDel()删除自身。A/C/D正确描述了任务特征。"
   },
   {
     "id": 357,
@@ -4419,7 +4418,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "PendSV是Cortex-M为OS设计的可挂起异常，通过触发PendSV并在其中完成上下文切换，可在所有中断退出后统一执行。"
+    "explanation": "选C。PendSV异常专门为OS任务切换设计→优先级最低→确保退出所有ISR后才切换。A HardFault是硬件错误。B SysTick是系统节拍。D SVC是系统调用。"
   },
   {
     "id": 358,
@@ -4432,7 +4431,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "SysTick是Cortex-M内核的24位定时器，配置方便，μC/OS通常用它产生周期性的系统时钟节拍(通常1ms或10ms)。"
+    "explanation": "选B。SysTick是Cortex-M内核24位定时器→配置方便→μC/OS用其产生周期系统心跳(通常1ms或10ms)。A TIM2也可但需占用外设。C USART不能做心跳。D RTC不适合高频节拍。"
   },
   {
     "id": 359,
@@ -4445,7 +4444,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "正确答案为 C：固定优先级抢占式调度。"
+    "explanation": "选C。μC/OS-II每个任务唯一优先级→固定优先级抢占式调度→高优先级就绪立即抢占。A时间片轮转需同优先级(μC/OS-III才有)。B先来先服务非实时。D多级队列非此特征。"
   },
   {
     "id": 360,
@@ -4458,7 +4457,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "移植μC/OS需要将PendSV_Handler和SysTick_Handler替换为OS的PendSV和SysTick处理函数，这是OS运行的基石。"
+    "explanation": "选B。移植μC/OS需替换启动文件中PendSV_Handler和SysTick_Handler→指向OS_PendSV和OS_SysTick。A HardFault通常不动。C NMI不动。D外设中断不动。"
   },
   {
     "id": 361,
@@ -4471,7 +4470,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "任务控制块(OS_TCB)是OS管理任务的核心数据结构，记录该任务独有的堆栈指针、优先级、延时计数、状态等全部属性。"
+    "explanation": "选B。OS_TCB记录任务的所有管理信息：堆栈指针SP、优先级Prio、延时计数、状态标志等。A代码存在Flash。C全局变量在数据段。D ISR不需要TCB。"
   },
   {
     "id": 362,
@@ -4484,7 +4483,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"必须通过关中断或锁调度器来保护\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。临界段代码必须关中断(或锁调度器)→防止并发访问导致数据不一致。A可以被中断打断不对。C互斥信号量也是一种方式但不唯一(关中断更根本)。D时间越短越好。"
   },
   {
     "id": 363,
@@ -4497,7 +4496,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "OSStart()启动多任务调度后不会返回。它将查找就绪表中最高优先级的就绪任务并开始执行。"
+    "explanation": "选C。OSStart()查找最高优先级就绪任务并开始运行→此函数不会返回。A OSInit()只初始化OS变量。B OSTaskCreate()只创建任务不启动调度。D OSSched()是被动调度的内部函数。"
   },
   {
     "id": 364,
@@ -4510,7 +4509,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "μC/OS规范要求：ISR入口调用OSIntEnter()标记进入中断(OSIntNestingCtr++)，出口调用OSIntExit()检查是否需要任务切换。"
+    "explanation": "选B。μC/OS规范：ISR开头OSIntEnter()标记进入中断、结尾OSIntExit()检查是否需要任务切换。A不写可能导致调度异常。C/D不完整或错误。"
   },
   {
     "id": 365,
@@ -4523,7 +4522,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "μC/OS-II通过设置ICSR寄存器的PendSV挂起位来触发PendSV异常，实现延时完成后的任务上下文切换。"
+    "explanation": "选B。μC/OS-II通过置位ICSR的PendSV挂起位来触发PendSV→实现延时后的任务切换→PendSV在所有ISR退出后执行上下文切换。A SVC用于初始启动。C/D不准确。"
   },
   {
     "id": 366,
@@ -4536,7 +4535,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "\"用汇编语言实现任务切换、中断进入/退出等底层代码\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选C。os_cpu_a.asm是汇编文件→实现任务堆栈初始化、上下文切换、中断进入/退出等CPU相关底层代码。A os_cfg.h定义系统配置。B main.c是应用代码入口。D HAL库初始化外设。"
   },
   {
     "id": 367,
@@ -4549,7 +4548,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "抢占式内核的核心特性：当更高优先级任务就绪时，立即剥夺当前任务CPU并切换过去，保证最高优先级任务最先运行。"
+    "explanation": "选B。抢占式内核核心特性→高优先级就绪立即剥夺低优先级CPU→保证最高优先级任务最先执行。A时间片管理需同优先级。C不可剥夺是协作式。D不准确。"
   },
   {
     "id": 368,
@@ -4562,7 +4561,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "OSTimeDlyHMSM(h,m,s,ms)将调用任务延时指定时间(1秒)后恢复就绪，任务进入等待态并触发调度切换。"
+    "explanation": "选C。OSTimeDlyHMSM(0,0,1,0)=延时1秒→当前任务进入等待态→触发调度→执行其他就绪任务→1秒后该任务恢复就绪。A不会死机。B不是立即就绪。D不删除任务。"
   },
   {
     "id": 369,
@@ -4575,7 +4574,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "μC/OS中优先级数值越小优先级越高。空闲任务(最低优先级)有最大优先级数值(如OS_LOWEST_PRIO)。"
+    "explanation": "选B。μC/OS中优先级数值越小优先级越高→优先级0是最高优先级。A越大越高相反。C相等不对。D不任意定义(有约定)。"
   },
   {
     "id": 370,
@@ -4588,7 +4587,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "OSTaskResume()用于恢复被OSTaskSuspend()挂起的任务。与OSTaskDel()不同，挂起的任务TCB和堆栈仍然保留。"
+    "explanation": "选C。OSTaskResume()恢复被OSTaskSuspend()挂起的任务→任务回到就绪态。A OSTaskDel()删除任务。B OSTaskSuspend()挂起任务。D OSTaskChangePrio()改优先级。"
   },
   {
     "id": 371,
@@ -4601,7 +4600,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "空闲任务(Idle Task)由OS自动创建，优先级最低，仅在无其他任务就绪时运行，通常执行低功耗等待或统计任务。"
+    "explanation": "选B。空闲任务(Idle Task)优先级最低→仅当无其他任务就绪时运行→通常执行低功耗休眠或统计计数。A最高优先级不对(那会饿死用户任务)。C与用户任务相同不对。D可配置但不建议(应为最低)。"
   },
   {
     "id": 372,
@@ -4614,7 +4613,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "OSTaskDel()将任务TCB和堆栈标记为空闲但不会立即释放给OS的内存池，可以等待OS空闲任务或手动回收。"
+    "explanation": "选B。OSTaskDel()删除任务后→TCB和堆栈标记为空闲→等待用户手动回收或空闲任务自动回收。A立即被占用不对(需先回收)。C无法删除不对。D自动清零不对。"
   },
   {
     "id": 373,
@@ -4627,7 +4626,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "\"高优先级任务被低优先级任务无限期阻塞的现象\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选A。优先级反转=低优先级持有共享资源→高优先级被阻塞→中优先级可抢占低优先级→高优先级无限期等待。B说反了。C/D不准确。"
   },
   {
     "id": 374,
@@ -4640,7 +4639,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "任务堆栈大小没有固定值，必须根据该任务的局部变量数量、函数调用深度(返回地址嵌套)和ISR压栈需求综合估算。"
+    "explanation": "选C。任务堆栈大小无法固定→需根据：局部变量大小+函数调用深度(返回地址嵌套)+中断压栈需求(进入ISR自动压栈8字)综合估算。A固定64字节太小。B编译通过不一定够。C正确答案。D与主频无关。"
   },
   {
     "id": 375,
@@ -4653,7 +4652,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "OS_CRITICAL_ENTER()进入临界区时关闭总中断(PRIMASK=1)，外部中断被屏蔽直到退出临界区。"
+    "explanation": "选B。OS_CRITICAL_ENTER()→关总中断(设置PRIMASK=1)→外部中断暂被屏蔽→退出临界区后恢复。A立即响应不对。C死机不对。D只影响PendSV不对(所有中断都屏蔽)。"
   },
   {
     "id": 376,
@@ -4666,7 +4665,7 @@ const QUESTIONS = [
     },
     "answer": "A",
     "correct": true,
-    "explanation": "信号量(Semaphore)是解决多任务共享资源问题的经典同步与互斥机制。互斥信号量还可防止优先级反转。"
+    "explanation": "选A。信号量(Semaphore)是多任务共享资源访问的经典同步/互斥机制→互斥信号量还可用优先级继承防反转。B消息队列用于传递数据。C事件标志组用于事件同步。D时间片是调度方式。"
   },
   {
     "id": 377,
@@ -4679,7 +4678,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "消息队列(Message Queue)可以在任务间传递多个字节的自定义消息，是比信号量更高级的通信机制。"
+    "explanation": "选B。消息队列(Message Queue)可在任务间传递任意大小的自定义消息(多字节)。A全局变量不安全。C事件标志只传递标志位。D信号量只传递计数。"
   },
   {
     "id": 378,
@@ -4692,7 +4691,7 @@ const QUESTIONS = [
     },
     "answer": "C",
     "correct": true,
-    "explanation": "信号量初始为0时调用OSSemPend()请求信号量，任务因得不到信号量而进入等待(阻塞)态，直到其他任务调用OSSemPost()释放。"
+    "explanation": "选C。信号量初值为0→OSSemPend()请求不到→任务进入等待(阻塞)态→等OSSemPost()释放信号量→任务恢复就绪。A不继续运行。B不直接进入就绪态。D不崩溃。"
   },
   {
     "id": 379,
@@ -4705,7 +4704,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "HardFault异常(优先级-1)当CPU检测到非法操作时触发：访问非法地址、非对齐访问(严格时)、未定义指令、堆栈溢出崩溃等。"
+    "explanation": "选B。HardFault触发条件：访问非法地址、非对齐访问(配置使能)、未定义指令、堆栈溢出→PC跳转无效地址。A NOP不会触发。C OSTimeDly正常不会。D使能中断正常不会。"
   },
   {
     "id": 380,
@@ -4718,7 +4717,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "μC/OS提供固定大小的内存块分区管理(Partition Memory)，避免了malloc/free的动态分配可能引起的内存碎片问题。"
+    "explanation": "选B。μC/OS内存管理：提供固定大小内存块分区→避免malloc/free动态分配导致的内存碎片→提高可靠性。A不提供变长分配。C不使用标准malloc。D支持动态内存(但方式是分区块)。"
   },
   {
     "id": 381,
@@ -4731,7 +4730,7 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"存储在任务的堆栈中\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。任务局部变量存在任务私有堆栈中→不同任务局部变量天然隔离。A全局区是所有任务共享的。C TCB只存管理信息不存局部变量。D只在第一次使用时在寄存器中。"
   },
   {
     "id": 382,
@@ -4744,6 +4743,6 @@ const QUESTIONS = [
     },
     "answer": "B",
     "correct": true,
-    "explanation": "\"通过 OSIntNestingCtr 记录嵌套深度，允许高优先级中断打断低优先级中断\" 准确描述了相关概念，是正确选项。"
+    "explanation": "选B。μC/OS支持中断嵌套→OSIntNestingCtr记录嵌套深度→高优先级可打断低优先级。A不支持嵌套不对。C D不准确。"
   }
 ];
